@@ -1,7 +1,6 @@
 -------------------------------------------------------------------
 ----------------------- Script By AVG hub
 -------------------------------------------------------------------
-local UserInputService = game:GetService("UserInputService")
 local Player = game.Players.LocalPlayer
 local CurrentCamera = game.Workspace.CurrentCamera
 local Mouse = Player:GetMouse()
