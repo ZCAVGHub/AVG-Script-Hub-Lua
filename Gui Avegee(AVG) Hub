@@ -26,7 +26,7 @@
 ------------------------------------------------------------
 ---------------- Starting
 ------------------------------------------------------------
-local STSCEEN = Instance.new("ScreenGui",game.Players.LocalPlayer.PlayerGui)
+local STSCEEN = Instance.new("ScreenGui",game.CoreGui)
 local STFRAME = Instance.new("Frame",STSCEEN)
 local STTEXT = Instance.new("TextLabel",STFRAME)
 STFRAME.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
@@ -784,7 +784,7 @@ end)
 ------------------------------------------------------------
 ---------------- Porperties
 ------------------------------------------------------------
-ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 UIGridLayout_4.Parent = Showcmd
