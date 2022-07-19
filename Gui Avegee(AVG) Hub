@@ -1,0 +1,1611 @@
+--[[
+███████████████████████████████████████████████████████████████████████╗
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║
+██░░░█████╗░░░░░██╗░░░██╗░░░░░██████╗░░░░░██╗░░██╗██╗░░░██╗██████╗░░░██║
+██░░██╔══██╗░░░░██║░░░██║░░░░██╔════╝░░░░░██║░░██║██║░░░██║██╔══██╗░░██║
+██░░███████║░░░░╚██╗░██╔╝░░░░██║░░██╗░░░░░███████║██║░░░██║██████╦╝░░██║
+██░░██╔══██║░░░░░╚████╔╝░░░░░██║░░╚██╗░░░░██╔══██║██║░░░██║██╔══██╗░░██║
+██░░██║░░██║░██╗░░╚██╔╝░░██╗░╚██████╔╝░░░░██║░░██║╚██████╔╝██████╦╝░░██║
+██░░╚═╝░░╚═╝░╚═╝░░░╚═╝░░░╚═╝░░╚═════╝░░░░░╚═╝░░╚═╝░╚═════╝░╚═════╝░░░██║
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██║
+███████████████████████████████████████████████████████████████████████║
+╔══════════════════════════════════════════════════════════════════════╝
+║██████████████████████████████████████████████████████████████████████
+║██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+║██░░░░░░░░░██████╗░░█████╗░██████╗░██╗░░░░░░█████╗░██╗░░██╗░░░░░░░░░██
+║██░░░░░░░░░██╔══██╗██╔══██╗██╔══██╗██║░░░░░██╔══██╗╚██╗██╔╝░░░░░░░░░██
+║██░░░░░░░░░██████╔╝██║░░██║██████╦╝██║░░░░░██║░░██║░╚███╔╝░░░░░░░░░░██
+║██░░░░░░░░░██╔══██╗██║░░██║██╔══██╗██║░░░░░██║░░██║░██╔██╗░░░░░░░░░░██
+║██░░░░░░░░░██║░░██║╚█████╔╝██████╦╝███████╗╚█████╔╝██╔╝╚██╗░░░░░░░░░██
+║██░░░░░░░░░╚═╝░░╚═╝░╚════╝░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░░░░░░░██
+║██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+║██████████████████████████████████████████████████████████████████████
+╚════════════════════════════════════════════════════════════════════╝
+]]--
+-- Create By AVG Script Hub
+------------------------------------------------------------
+---------------- Starting
+------------------------------------------------------------
+local STSCEEN = Instance.new("ScreenGui",game.Players.LocalPlayer.PlayerGui)
+local STFRAME = Instance.new("Frame",STSCEEN)
+local STTEXT = Instance.new("TextLabel",STFRAME)
+STFRAME.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+STFRAME.BorderSizePixel = 0
+STFRAME.Position = UDim2.new(0.248045176, 0, 0.233461261, 0)
+STFRAME.Size = UDim2.new(0, 619, 0, 324)
+STTEXT.Name = "Text"
+STTEXT.BackgroundTransparency = 1.000
+STTEXT.Size = UDim2.new(0, 200, 0, 50)
+STTEXT.Font = Enum.Font.Cartoon
+STTEXT.Text = ""
+STTEXT.Position = UDim2.new(0.338, 0,0.423, 0)
+STTEXT.TextColor3 = Color3.fromRGB(255, 255, 255)
+STTEXT.TextSize = 50.000
+local STTEXT2 = Instance.new("TextLabel",STFRAME)
+STTEXT2.Name = "Text"
+STTEXT2.BackgroundTransparency = 1.000
+STTEXT2.Size = UDim2.new(0, 200, 0, 50)
+STTEXT2.Font = Enum.Font.Cartoon
+STTEXT2.Text = "Avegee(AVG) Hub"
+STTEXT2.Position = UDim2.new(0.338, 0,0.323, 0)
+STTEXT2.TextColor3 = Color3.fromRGB(255, 255, 255)
+STTEXT2.TextSize = 25.000
+
+local times = 0
+for x = 1,5 do
+	times += 10
+	STTEXT.Text = "Loading. "..times.."%"
+	wait(0.5)
+	times += 10
+	STTEXT.Text = "Loading.. "..times.."%"
+	wait(0.5)
+	STTEXT.Text = "Loading... "..times.."%"
+	wait(0.5)
+end
+STSCEEN:Destroy()
+------------------------------------------------------------
+---------------- Setting
+------------------------------------------------------------
+local FlyKey = "F"
+local teleport = Enum.KeyCode.C
+------------------------------------------------------------
+---------------- Fucntion Button
+------------------------------------------------------------
+function close(ScreenGui)
+	ScreenGui:Destroy()
+end
+function small(frame,frame2,frame3)
+	if frame.Visible == true then
+		frame.Visible = false
+	else
+		frame.Visible = true
+		frame2.BackgroundTransparency = 0
+		frame3.TextTransparency = 0
+	end
+end
+function onOff(frame,frame2,frame3)
+	if frame.Visible == true then
+		frame.Visible = false
+		frame2.BackgroundTransparency = 1
+		frame3.TextTransparency = 1
+	else
+		frame.Visible = true
+		frame2.BackgroundTransparency = 0
+		frame3.TextTransparency = 0
+	end
+end
+function openframe(frame)
+	local list = frame.Parent:GetChildren()
+	for i = 1,#list do
+		local temp = list[i]
+		if temp ~= frame then
+			if temp.Visible == true then
+				temp.Visible = false
+			end
+		end
+	end
+	frame.Visible = true
+end
+------------------------------------------------------------
+---------------- Fucntion System
+------------------------------------------------------------
+function texttovalue(text,value)
+	value.Value = text.Text
+end
+function setspeed(speed)
+	game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end
+function setjump(jump)
+	game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
+end
+function anchor(Button)
+	local cha = game:GetService("Players").LocalPlayer.Character
+	if cha.HumanoidRootPart.Anchored == false then
+		cha.HumanoidRootPart.Anchored = true
+		Button.Text = "   ⚓️ Anchor Character 🟩"
+	else
+		cha.HumanoidRootPart.Anchored = false
+		Button.Text = "   ⚓️ Anchor Character 🟥"
+	end
+end
+function fly(speed)
+	repeat wait() until game.Players.LocalPlayer.Character
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	local humanoid = character.Humanoid
+	local humanoidrootPart = character.HumanoidRootPart
+	local mouse = plr:GetMouse()
+
+	local enable = false
+
+	mouse.KeyDown:Connect(function(key)
+		if key == "f" then
+			enable = true
+			local bv = Instance.new("BodyVelocity", humanoidrootPart)
+			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			while enable == true do
+				bv.Velocity = mouse.Hit.LookVector * speed
+				humanoid.Sit = true
+				wait()
+			end
+		end
+	end)
+	mouse.KeyUp:Connect(function(key)
+		if key == "f" then
+			if enable == true then
+				enable = false
+				humanoid.Sit = false
+				humanoidrootPart:FindFirstChildOfClass("BodyVelocity"):Destroy()
+			end
+		end
+	end)
+end
+function sit()
+	local cha = game:GetService("Players").LocalPlayer.Character
+	if cha.Humanoid.Sit == false then
+		cha.Humanoid.Sit = true
+	else
+		cha.Humanoid.Sit = false
+	end
+end
+function createwaypoint(name,color)
+	if game.Workspace:FindFirstChild(name) == nil then
+		local part = Instance.new("Part",game.Workspace)
+		part.Name = name
+		part.Anchored = true
+		part.Transparency = 1
+		part.CanCollide = false
+		part.CFrame = game:GetService("Players").LocalPlayer.Character.Humanoid.Torso.CFrame
+
+		local BillboardGui = Instance.new("BillboardGui", part)
+		BillboardGui.Size = UDim2.new(0,10,0,10)
+		BillboardGui.AlwaysOnTop = true
+		local frame = Instance.new("Frame",BillboardGui)
+		frame.Size = UDim2.new(0,10,0,10)
+		frame.Rotation = 45
+		frame.BackgroundTransparency = 0.5
+		frame.BackgroundColor3 = color
+	end
+end
+function removewaypoint(name)
+	game.Workspace:FindFirstChild(name):Destroy()
+end
+function teleporttowaypoint(name)
+	game:GetService("Players").LocalPlayer.Character.Humanoid.Torso.CFrame = game.Workspace:FindFirstChild(name).CFrame
+end
+function create(parent,color,name)
+	local BillboardGui = Instance.new("BillboardGui", parent)
+	BillboardGui.Size = UDim2.new(0,200,0,84)
+	BillboardGui.AlwaysOnTop = true
+	local Frame = Instance.new("Frame",BillboardGui)
+	Frame.Size = UDim2.new(0,40,0,60)
+	Frame.Position = UDim2.new(0,80,0,2)
+	local UIStroke = Instance.new("UIStroke", Frame)
+	UIStroke.Thickness = 2
+	UIStroke.Color = color
+	local UIGradient = Instance.new("UIGradient", Frame)
+	UIGradient.Transparency = NumberSequence.new{
+		NumberSequenceKeypoint.new(0,1),
+		NumberSequenceKeypoint.new(.5,1),
+		NumberSequenceKeypoint.new(1,1)
+	}
+	local TextLabel = Instance.new("TextLabel",BillboardGui)
+	TextLabel.Text = name
+	TextLabel.Size = UDim2.new(0,200,0,20)
+	TextLabel.Position = UDim2.new(0,0,0,62)
+	TextLabel.BackgroundTransparency = 1
+	TextLabel.TextColor3 = color
+	TextLabel.TextSize = 14
+	TextLabel.Font = Enum.Font.Code
+	return BillboardGui
+end
+
+function showallplr(db)
+	if db.Value == true then
+		local list = db:GetChildren()
+		for i = 1, #list do
+			local object = list[i].Value
+			object:Destroy()
+			list[i]:Destroy()
+		end
+	else
+		local child = game:GetService("Players").LocalPlayer.Character.Parent:GetChildren()
+		local temp = nil
+		for i = 1,#child do
+			temp = child[i]
+			if temp.ClassName == "Model" then
+				local human = temp:FindFirstChild("Humanoid")
+				if human ~= nil and temp.Name ~= game:GetService("Players").LocalPlayer.Name then
+					local find = temp.HumanoidRootPart:FindFirstChild("BillboardGui")
+					if find == nil then
+						local tag = Instance.new("ObjectValue",db)
+						local BillboardGui = create(temp.HumanoidRootPart,Color3.new(1, 0, 0),temp.Name)
+						tag.Value = BillboardGui
+					end
+				end
+			end
+		end
+	end
+end
+function showallplrarsenal(db)
+	if db.Value == true then
+		local list = db:GetChildren()
+		for i = 1, #list do
+			local object = list[i].Value
+			object:Destroy()
+			list[i]:Destroy()
+		end
+	else
+		local child = game:GetService("Players"):GetChildren()
+		local temp = nil
+		for i = 1,#child do
+			temp = child[i]
+			if temp.ClassName == "Player" then
+				if temp.Team ~= game.Players.LocalPlayer.Team then
+					local human = temp.Character:FindFirstChild("Humanoid")
+					if human ~= nil and temp.Name ~= game:GetService("Players").LocalPlayer.Name then
+						local find = temp.Character.HumanoidRootPart:FindFirstChild("BillboardGui")
+						if find == nil then
+							local tag = Instance.new("ObjectValue",db)
+							local BillboardGui = create(temp.Character.HumanoidRootPart,Color3.new(1, 0, 0),temp.Name)
+							tag.Value = BillboardGui
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function createpart(name)
+	local fol = nil
+	if game.Workspace:FindFirstChild("PartStorage") == nil then
+		local folder = Instance.new("Folder", game.Workspace)
+		folder.Name = "PartStorage"
+		fol = folder
+	else
+		fol = game.Workspace:FindFirstChild("PartStorage")
+	end
+	local part = Instance.new("Part", fol)
+	part.Anchored = true
+	part.Name = name
+end
+function sizepart(name,x,y,z)
+	local folder = game.Workspace:FindFirstChild("PartStorage")
+	if folder ~= nil then
+		if folder:FindFirstChild(name) ~= nil then
+			folder:FindFirstChild(name).Size = Vector3.new(x,y,z)
+		end
+	end
+end
+function positionpart(name,x,y,z)
+	local folder = game.Workspace:FindFirstChild("PartStorage")
+	if folder ~= nil then
+		if folder:FindFirstChild(name) ~= nil then
+			folder:FindFirstChild(name).Position = Vector3.new(x,y,z)
+		end
+	end
+end
+function removepart(name)
+	local folder = game.Workspace:FindFirstChild("PartStorage")
+	if folder ~= nil then
+		if folder:FindFirstChild(name) ~= nil then
+			folder:FindFirstChild(name):Destroy()
+		end
+	end
+end
+function waitcmd(parent)
+	local Button = Instance.new("TextButton")
+	Button.Name = "Wait"
+	Button.Parent = parent
+	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BorderSizePixel = 0
+	Button.Size = UDim2.new(0, 493, 0, 17)
+	Button.Font = Enum.Font.Code
+	Button.Text = "   Wait"
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextSize = 14.000
+	Button.TextXAlignment = Enum.TextXAlignment.Left
+	local waits = Instance.new("IntValue",Button)
+	Button.MouseWheelBackward:Connect(function()
+		waits.Value = waits.Value - 1
+		Button.Text = "   Wait "..waits.Value
+	end)
+	Button.MouseButton2Click:Connect(function()
+		Button:Destroy()
+	end)
+	Button.MouseWheelForward:Connect(function()
+		waits.Value = waits.Value + 1
+		Button.Text = "   Wait "..waits.Value
+	end)
+end
+function teleportcmd(parent)
+	local Button = Instance.new("TextButton")
+	Button.Name = "Teleport"
+	Button.Parent = parent
+	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BorderSizePixel = 0
+	Button.Size = UDim2.new(0, 493, 0, 17)
+	Button.Font = Enum.Font.Code
+	Button.Text = "   Teleport to"
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextSize = 14.000
+	Button.TextXAlignment = Enum.TextXAlignment.Left
+	local posX = Instance.new("IntValue",Button)
+	posX.Name = "posX"
+	local posY = Instance.new("IntValue",Button)
+	posY.Name = "posY"
+	local posZ = Instance.new("IntValue",Button)
+	posZ.Name = "posZ"
+	Button.MouseButton1Click:Connect(function()
+		posX.Value = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X
+		posY.Value = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y
+		posZ.Value = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+		Button.Text = "   Teleport to "..posX.Value..", "..posY.Value..", "..posZ.Value
+	end)
+	Button.MouseButton2Click:Connect(function()
+		Button:Destroy()
+	end)
+end
+function createbutton(name,parent,text)
+	local Button = Instance.new("TextButton")
+	Button.Name = name
+	Button.Parent = parent
+	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BorderSizePixel = 0
+	Button.Size = UDim2.new(0, 493, 0, 17)
+	Button.Font = Enum.Font.Code
+	Button.Text = "   "..text
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextSize = 14.000
+	Button.TextXAlignment = Enum.TextXAlignment.Left
+	return Button
+end
+function createtext(name,parent,text)
+	local Text = Instance.new("TextLabel")
+	Text.Name = name
+	Text.Parent = parent
+	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundTransparency = 1.000
+	Text.Size = UDim2.new(0, 200, 0, 50)
+	Text.Font = Enum.Font.Code
+	Text.Text = "━━ "..text.." ━━"
+	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text.TextSize = 14.000
+	return Text
+end
+function buttonplauers(parent)
+	local list = game.Players:GetChildren()
+	for i = 1,#list do
+		local temp = list[i]
+		if temp.Name ~= game.Players.LocalPlayer.Name and parent:FindFirstChild(temp.Name) == nil then
+			local Button = Instance.new("TextButton")
+			Button.Name = temp.Name
+			Button.Parent = parent
+			Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+			Button.BorderSizePixel = 0
+			Button.Size = UDim2.new(0, 493, 0, 17)
+			Button.Font = Enum.Font.Code
+			Button.Text = "   🚀 Teleport to "..temp.Name
+			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Button.TextSize = 14.000
+			Button.TextXAlignment = Enum.TextXAlignment.Left
+
+			Button.MouseButton1Click:Connect(function(plr)
+				game.Players.LocalPlayer.Character.Humanoid.Torso.CFrame = game.Players.LocalPlayer.Character.Parent:FindFirstChild(Button.Name).Humanoid.Torso.CFrame
+			end)
+		end
+	end
+end
+------------------------------------------------------------
+---------------- Local
+------------------------------------------------------------
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Properties = Instance.new("ScrollingFrame")
+local MainButton = Instance.new("TextButton")
+local PlayersButton = Instance.new("TextButton")
+local CheckButton = Instance.new("TextButton")
+local Storage = Instance.new("Frame")
+local MainFrame = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Text = Instance.new("TextLabel")
+local SpeedClassicButton = Instance.new("TextButton")
+local SpeedButton = Instance.new("TextButton")
+local SpeedInput = Instance.new("TextBox")
+local jumpClassicButton = Instance.new("TextButton")
+local jumpButton = Instance.new("TextButton")
+local JumpInput = Instance.new("TextBox")
+local AnchorButton = Instance.new("TextButton")
+local FlyButton = Instance.new("TextButton")
+local FlyInput = Instance.new("TextBox")
+local SitButton = Instance.new("TextButton")
+local UIGridLayout_4 = Instance.new("UIGridLayout")
+local Text_2 = Instance.new("TextLabel")
+local createwaypoint1Button = Instance.new("TextButton")
+local createwaypoint2Button = Instance.new("TextButton")
+local createwaypoint3Button = Instance.new("TextButton")
+local teleportwaypoint1Button = Instance.new("TextButton")
+local teleportwaypoint2Button = Instance.new("TextButton")
+local teleportwaypoint3Button = Instance.new("TextButton")
+local removewaypoint1Button = Instance.new("TextButton")
+local removewaypoint2Button = Instance.new("TextButton")
+local removewaypoint3Button = Instance.new("TextButton")
+local showplayerallButton = Instance.new("TextButton")
+local Text_3 = Instance.new("TextLabel")
+local CreatePartButton = Instance.new("TextButton")
+local PartnameInput = Instance.new("TextBox")
+local SizePartButton = Instance.new("TextButton")
+local SizeZInput = Instance.new("TextBox")
+local SizeYInput = Instance.new("TextBox")
+local SizeXInput = Instance.new("TextBox")
+local SizePartnameInput = Instance.new("TextBox")
+local PositionPartButton = Instance.new("TextButton")
+local PositionZInput = Instance.new("TextBox")
+local PositionYInput = Instance.new("TextBox")
+local PositionXInput = Instance.new("TextBox")
+local PositionPartnameInput = Instance.new("TextBox")
+local RemovePartButton = Instance.new("TextButton")
+local RemovePartnameInput = Instance.new("TextBox")
+local PlayersFrame = Instance.new("ScrollingFrame")
+local UIGridLayout_2 = Instance.new("UIGridLayout")
+local CheckFrame = Instance.new("ScrollingFrame")
+local UIGridLayout_3 = Instance.new("UIGridLayout")
+local Text_4 = Instance.new("TextLabel")
+local CheckWalkSpeedButton = Instance.new("TextButton")
+local CheckJumPowerButton = Instance.new("TextButton")
+local CheckPositionButton = Instance.new("TextButton")
+local Bar = Instance.new("Frame")
+local OffButton = Instance.new("TextButton")
+local SmallButton = Instance.new("TextButton")
+local CloseButton = Instance.new("TextButton")
+local TextName = Instance.new("TextLabel")
+
+local FunctionButton = Instance.new("TextButton")
+local FunctionFrame = Instance.new("Frame")
+local Command = Instance.new("ScrollingFrame")
+local TeleportCmdButton = Instance.new("TextButton")
+local WaitCmdButton = Instance.new("TextButton")
+local RunButton = Instance.new("TextButton")
+local Showcmd = Instance.new("ScrollingFrame")
+------------------------------------------------------------
+---------------- Folder and Value
+------------------------------------------------------------
+local Folder = Instance.new("Folder",ScreenGui)
+Folder.Name = "Value"
+local walkSpeed = Instance.new("NumberValue",Folder)
+walkSpeed.Name = "WalkSpeed"
+local jumppower = Instance.new("NumberValue",Folder)
+jumppower.Name = "JumpPower"
+local flyspeed = Instance.new("NumberValue",Folder)
+flyspeed.Name = "FlySpeed"
+
+local partname = Instance.new("StringValue",Folder)
+partname.Name = "PartName"
+
+local removepartname = Instance.new("StringValue",Folder)
+removepartname.Name = "RemovePartName"
+
+local sizepartname = Instance.new("StringValue",Folder)
+sizepartname.Name = "SizePartName"
+local sizepartX = Instance.new("NumberValue",Folder)
+sizepartX.Name = "SizePartX"
+local sizepartY = Instance.new("NumberValue",Folder)
+sizepartY.Name = "SizePartY"
+local sizepartZ = Instance.new("NumberValue",Folder)
+sizepartZ.Name = "SizePartZ"
+
+local positionpartname = Instance.new("StringValue",Folder)
+positionpartname.Name = "PositionPartName"
+local positionpartX = Instance.new("NumberValue",Folder)
+positionpartX.Name = "PositionPartX"
+local positionpartY = Instance.new("NumberValue",Folder)
+positionpartY.Name = "PositionPartY"
+local positionpartZ = Instance.new("NumberValue",Folder)
+positionpartZ.Name = "PositionePartZ"
+
+
+local posX = Instance.new("IntValue",Folder)
+posX.Name = "PosX"
+local posY = Instance.new("IntValue",Folder)
+posY.Name = "PosY"
+local posZ = Instance.new("IntValue",Folder)
+posZ.Name = "PosZ"
+------------------------------------------------------------
+---------------- Value
+------------------------------------------------------------
+local showplayer = Instance.new("BoolValue",Folder)
+local showplayerArsenal = Instance.new("BoolValue",Folder)
+local headlock = Instance.new("BoolValue",Folder)
+local ranteleport = Instance.new("BoolValue",Folder)
+------------------------------------------------------------
+---------------- ValueSetting
+------------------------------------------------------------
+showplayer.Name = "ShowPlayer"
+showplayerArsenal.Name = "ShowPlayerArsenal"
+headlock.Name = "HeadLock"
+ranteleport.Name = "RandomTeleport(Arsenal)"
+------------------------------------------------------------
+---------------- Button
+------------------------------------------------------------
+CloseButton.MouseButton1Click:Connect(function()
+	close(ScreenGui)
+end)
+SmallButton.MouseButton1Click:Connect(function()
+	small(Frame,Bar,TextName)
+end)
+OffButton.MouseButton1Click:Connect(function()
+	onOff(Frame,Bar,TextName)
+end)
+MainButton.MouseButton1Click:Connect(function()
+	openframe(MainFrame)
+end)
+PlayersButton.MouseButton1Click:Connect(function()
+	openframe(PlayersFrame)
+end)
+CheckButton.MouseButton1Click:Connect(function()
+	openframe(CheckFrame)
+end)
+SpeedClassicButton.MouseButton1Click:Connect(function()
+	setspeed(16)
+end)
+SpeedButton.MouseButton1Click:Connect(function()
+	texttovalue(SpeedInput,walkSpeed)
+	setspeed(walkSpeed.Value)
+end)
+jumpClassicButton.MouseButton1Click:Connect(function()
+	setjump(50)
+end)
+jumpButton.MouseButton1Click:Connect(function()
+	texttovalue(JumpInput,jumppower)
+	setjump(jumppower.Value)
+end)
+AnchorButton.MouseButton1Click:Connect(function()
+	anchor(AnchorButton)
+end)
+FlyButton.MouseButton1Click:Connect(function()
+	FlyButton.Text = "   ✈️ Player Fly [ Enter "..FlyKey.." ]"
+	texttovalue(FlyInput,flyspeed)
+	fly(flyspeed.Value)
+end)
+SitButton.MouseButton1Click:Connect(function()
+	sit()
+end)
+createwaypoint1Button.MouseButton1Click:Connect(function()
+	createwaypoint("WayPoint1",Color3.new(0.0156863, 1, 0))
+end)
+createwaypoint2Button.MouseButton1Click:Connect(function()
+	createwaypoint("WayPoint2",Color3.new(1, 0.886275, 0))
+end)
+createwaypoint3Button.MouseButton1Click:Connect(function()
+	createwaypoint("WayPoint3",Color3.new(1, 0, 0))
+end)
+removewaypoint1Button.MouseButton1Click:Connect(function()
+	removewaypoint("WayPoint1")
+end)
+removewaypoint2Button.MouseButton1Click:Connect(function()
+	removewaypoint("WayPoint2")
+end)
+removewaypoint3Button.MouseButton1Click:Connect(function()
+	removewaypoint("WayPoint3")
+end)
+teleportwaypoint1Button.MouseButton1Click:Connect(function()
+	teleporttowaypoint("WayPoint1")
+end)
+teleportwaypoint2Button.MouseButton1Click:Connect(function()
+	teleporttowaypoint("WayPoint2")
+end)
+
+teleportwaypoint3Button.MouseButton1Click:Connect(function()
+	teleporttowaypoint("WayPoint3")
+end)
+showplayerallButton.MouseButton1Click:Connect(function()
+	showallplr(showplayer)
+	if showplayer.Value == false then
+		showplayer.Value = true
+		showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟩"
+	else
+		showplayer.Value = false
+		showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟥"
+	end
+end)
+CreatePartButton.MouseButton1Click:Connect(function()
+	texttovalue(PartnameInput,partname)
+	createpart(partname.Value)
+end)
+SizePartButton.MouseButton1Click:Connect(function()
+	texttovalue(SizePartnameInput,sizepartname)
+	texttovalue(SizeXInput,sizepartX)
+	texttovalue(SizeYInput,sizepartY)
+	texttovalue(SizeZInput,sizepartZ)
+	sizepart(sizepartname.Value,sizepartX.Value,sizepartY.Value,sizepartZ.Value)
+end)
+PositionPartButton.MouseButton1Click:Connect(function()
+	texttovalue(PositionPartnameInput,positionpartname)
+	texttovalue(PositionXInput,positionpartX)
+	texttovalue(PositionYInput,positionpartY)
+	texttovalue(PositionZInput,positionpartZ)
+	positionpart(positionpartname.Value,positionpartX.Value,positionpartY.Value,positionpartZ.Value)
+end)
+PositionPartButton.MouseButton1Click:Connect(function()
+	texttovalue(RemovePartnameInput,removepartname)
+	removepart(removepartname.Value)
+end)
+PlayersButton.MouseButton1Click:Connect(function()
+	buttonplauers(PlayersFrame)
+end)
+CheckWalkSpeedButton.MouseButton1Click:Connect(function()
+	local cha = game:GetService("Players").LocalPlayer.Character
+	CheckWalkSpeedButton.Text = "   🔍 Check WalkSpeed : "..cha.Humanoid.WalkSpeed
+end)
+CheckJumPowerButton.MouseButton1Click:Connect(function()
+	local cha = game:GetService("Players").LocalPlayer.Character
+	CheckJumPowerButton.Text = "   🔍 Check JumpPower : "..cha.Humanoid.JumpPower
+end)
+CheckPositionButton.MouseButton1Click:Connect(function()
+	local cha = game:GetService("Players").LocalPlayer.Character
+
+	posX.Value = cha.HumanoidRootPart.Position.X
+	posY.Value = cha.HumanoidRootPart.Position.Y
+	posZ.Value = cha.HumanoidRootPart.Position.Z
+
+	local tx = posX.Value..", "..posY.Value..", "..posZ.Value
+	CheckPositionButton.Text = "   🔍 Check Position : "..tx
+end)
+CheckPositionButton.MouseButton2Click:Connect(function()
+	local cha = game:GetService("Players").LocalPlayer.Character
+
+	posX.Value = cha.HumanoidRootPart.Position.X
+	posY.Value = cha.HumanoidRootPart.Position.Y
+	posZ.Value = cha.HumanoidRootPart.Position.Z
+	local tx = posX.Value..", "..posY.Value..", "..posZ.Value
+	setclipboard(tx)
+end)
+local UIS = game:GetService('UserInputService')
+local frame = Frame
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput(input)
+		end
+	end
+end)
+
+local frame2 = Bar
+local dragToggle2 = nil
+local dragSpeed2 = 0.25
+local dragStart2 = nil
+local startPos2 = nil
+
+local function updateInput1(input)
+	local delta = input.Position - dragStart2
+	local position = UDim2.new(startPos2.X.Scale, startPos2.X.Offset + delta.X,
+		startPos2.Y.Scale, startPos2.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame2, TweenInfo.new(dragSpeed2), {Position = position}):Play()
+end
+
+frame2.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle2 = true
+		dragStart2 = input.Position
+		startPos2 = frame2.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle2 = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle2 then
+			updateInput1(input)
+		end
+	end
+end)
+FunctionButton.MouseButton1Click:Connect(function()
+	openframe(FunctionFrame)
+end)
+TeleportCmdButton.MouseButton1Click:Connect(function()
+	teleportcmd(Showcmd)
+end)
+WaitCmdButton.MouseButton1Click:Connect(function()
+	waitcmd(Showcmd)
+end)
+RunButton.MouseButton1Click:Connect(function()
+	local list = Showcmd:GetChildren()
+	for i = 1,#list do
+		local temp = list[i]
+		if temp.ClassName ~= "UIGridLayout" then
+			local Value = temp:FindFirstChild("Value")
+			if Value ~= nil then
+				if temp.Name == "Wait" then
+					wait(Value.Value)
+				end
+			else
+				local posX = temp:FindFirstChild("posX")
+				local posY = temp:FindFirstChild("posY")
+				local posZ = temp:FindFirstChild("posZ")
+				if posX ~= nil and posY ~= nil and posZ ~= nil then
+					if temp.Name == "Teleport" then
+						local Torso = game.Players.LocalPlayer.Character.Humanoid.Torso
+						Torso.CFrame = CFrame.new(posX.Value,posY.Value,posZ.Value)
+					end
+				end
+			end
+		end
+	end
+end)
+------------------------------------------------------------
+---------------- Porperties
+------------------------------------------------------------
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+UIGridLayout_4.Parent = Showcmd
+UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_4.CellSize = UDim2.new(0, 400, 0, 20)
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.248045176, 0, 0.233461261, 0)
+Frame.Size = UDim2.new(0, 619, 0, 324)
+
+Properties.Name = "Properties"
+Properties.Parent = Frame
+Properties.Active = true
+Properties.BackgroundColor3 = Color3.fromRGB(62, 24, 66)
+Properties.BorderSizePixel = 0
+Properties.Position = UDim2.new(0, 0, 0.0524691343, 0)
+Properties.Size = UDim2.new(0, 100, 0, 307)
+Properties.CanvasSize = UDim2.new(0, 0, 10, 0)
+Properties.ScrollBarThickness = 5
+
+MainButton.Name = "MainButton"
+MainButton.Parent = Properties
+MainButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+MainButton.BorderSizePixel = 0
+MainButton.Position = UDim2.new(0.0800000057, 0, 0.000721935648, 0)
+MainButton.Size = UDim2.new(0, 83, 0, 17)
+MainButton.Font = Enum.Font.Code
+MainButton.Text = "Main"
+MainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainButton.TextSize = 14.000
+
+PlayersButton.Name = "PlayersButton"
+PlayersButton.Parent = Properties
+PlayersButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+PlayersButton.BorderSizePixel = 0
+PlayersButton.Position = UDim2.new(0.0799999982, 0, 0.00762963016, 0)
+PlayersButton.Size = UDim2.new(0, 83, 0, 17)
+PlayersButton.Font = Enum.Font.Code
+PlayersButton.Text = "Players"
+PlayersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayersButton.TextSize = 14.000
+
+CheckButton.Name = "CheckButton"
+CheckButton.Parent = Properties
+CheckButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckButton.BorderSizePixel = 0
+CheckButton.Position = UDim2.new(0.0799999982, 0, 0.0144999996, 0)
+CheckButton.Size = UDim2.new(0, 83, 0, 17)
+CheckButton.Font = Enum.Font.Code
+CheckButton.Text = "Check"
+CheckButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckButton.TextSize = 14.000
+
+FunctionButton.Name = "FunctionButton"
+FunctionButton.Parent = Properties
+FunctionButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+FunctionButton.BorderSizePixel = 0
+FunctionButton.Position = UDim2.new(0.0799999982, 0, 0.0215987656, 0)
+FunctionButton.Size = UDim2.new(0, 83, 0, 17)
+FunctionButton.Font = Enum.Font.Code
+FunctionButton.Text = "Function"
+FunctionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FunctionButton.TextSize = 14.000
+
+Storage.Name = "Storage"
+Storage.Parent = Frame
+Storage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Storage.BackgroundTransparency = 1.000
+Storage.Position = UDim2.new(0.161550894, 0, 0.0524691343, 0)
+Storage.Size = UDim2.new(0, 519, 0, 307)
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Storage
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.BackgroundTransparency = 1.000
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.0154142585, 0, 0, 0)
+MainFrame.Size = UDim2.new(0, 511, 0, 307)
+MainFrame.Visible = false
+MainFrame.CanvasPosition = Vector2.new(0, 0)
+MainFrame.CanvasSize = UDim2.new(0, 0,3, 0)
+MainFrame.ScrollBarThickness = 5
+
+UIGridLayout.Parent = MainFrame
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 493, 0, 20)
+
+Text.Name = "Text"
+Text.Parent = MainFrame
+Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text.BackgroundTransparency = 1.000
+Text.Size = UDim2.new(0, 200, 0, 50)
+Text.Font = Enum.Font.Code
+Text.Text = "━━ Character ━━"
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextSize = 14.000
+
+FunctionFrame.Name = "FunctionFrame"
+FunctionFrame.Parent = Storage
+FunctionFrame.Visible = false
+FunctionFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FunctionFrame.BackgroundTransparency = 1.000
+FunctionFrame.Position = UDim2.new(0, 0, 0.0162866451, 0)
+FunctionFrame.Size = UDim2.new(0, 519, 0, 302)
+
+Command.Name = "Command"
+Command.Parent = FunctionFrame
+Command.Active = true
+Command.BackgroundColor3 = Color3.fromRGB(62, 24, 66)
+Command.BorderSizePixel = 0
+Command.Position = UDim2.new(0.807321787, 0, -0.0170672908, 0)
+Command.Size = UDim2.new(0, 100, 0, 307)
+Command.CanvasSize = UDim2.new(0, 0, 10, 0)
+Command.ScrollBarThickness = 5
+
+TeleportCmdButton.Name = "TeleportCmdButton"
+TeleportCmdButton.Parent = Command
+TeleportCmdButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+TeleportCmdButton.BorderSizePixel = 0
+TeleportCmdButton.Position = UDim2.new(0.0800000057, 0, 0.000721935648, 0)
+TeleportCmdButton.Size = UDim2.new(0, 83, 0, 17)
+TeleportCmdButton.Font = Enum.Font.Code
+TeleportCmdButton.Text = "Teleport"
+TeleportCmdButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportCmdButton.TextSize = 14.000
+
+WaitCmdButton.Name = "WaitCmdButton"
+WaitCmdButton.Parent = Command
+WaitCmdButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+WaitCmdButton.BorderSizePixel = 0
+WaitCmdButton.Position = UDim2.new(0.0799999982, 0, 0.00762963016, 0)
+WaitCmdButton.Size = UDim2.new(0, 83, 0, 17)
+WaitCmdButton.Font = Enum.Font.Code
+WaitCmdButton.Text = "Wait"
+WaitCmdButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+WaitCmdButton.TextSize = 14.000
+
+RunButton.Name = "RunButton"
+RunButton.Parent = Command
+RunButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+RunButton.BorderSizePixel = 0
+RunButton.Position = UDim2.new(0.0799999982, 0, 0.021, 0)
+RunButton.Size = UDim2.new(0, 83, 0, 17)
+RunButton.Font = Enum.Font.Code
+RunButton.Text = "Run!"
+RunButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RunButton.TextSize = 14.000
+
+Showcmd.Name = "Showcmd"
+Showcmd.Parent = FunctionFrame
+Showcmd.Active = true
+Showcmd.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Showcmd.BackgroundTransparency = 1.000
+Showcmd.BorderSizePixel = 0
+Showcmd.Position = UDim2.new(0.0192678235, 0, -0.0170673095, 0)
+Showcmd.Size = UDim2.new(0, 409, 0, 307)
+Showcmd.CanvasSize = UDim2.new(0, 0, 0, 0)
+Showcmd.ScrollBarThickness = 5
+
+
+SpeedClassicButton.Name = "SpeedClassicButton"
+SpeedClassicButton.Parent = MainFrame
+SpeedClassicButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SpeedClassicButton.BorderSizePixel = 0
+SpeedClassicButton.Size = UDim2.new(0, 493, 0, 17)
+SpeedClassicButton.Font = Enum.Font.Code
+SpeedClassicButton.Text = "   ⚡️ WalkSpeed ( Classic )"
+SpeedClassicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedClassicButton.TextSize = 14.000
+SpeedClassicButton.TextXAlignment = Enum.TextXAlignment.Left
+
+SpeedButton.Name = "SpeedButton"
+SpeedButton.Parent = MainFrame
+SpeedButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SpeedButton.BorderSizePixel = 0
+SpeedButton.Size = UDim2.new(0, 493, 0, 17)
+SpeedButton.Font = Enum.Font.Code
+SpeedButton.Text = "   ⚡️ Set WalkSpeed"
+SpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedButton.TextSize = 14.000
+SpeedButton.TextXAlignment = Enum.TextXAlignment.Left
+
+SpeedInput.Name = "SpeedInput"
+SpeedInput.Parent = SpeedButton
+SpeedInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SpeedInput.BorderSizePixel = 0
+SpeedInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
+SpeedInput.Size = UDim2.new(0, 97, 0, 15)
+SpeedInput.Font = Enum.Font.Code
+SpeedInput.PlaceholderText = "Count Speed"
+SpeedInput.Text = ""
+SpeedInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedInput.TextSize = 13.000
+
+jumpClassicButton.Name = "jumpClassicButton"
+jumpClassicButton.Parent = MainFrame
+jumpClassicButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+jumpClassicButton.BorderSizePixel = 0
+jumpClassicButton.Size = UDim2.new(0, 493, 0, 17)
+jumpClassicButton.Font = Enum.Font.Code
+jumpClassicButton.Text = "   🦶 JumpPower ( Classic )"
+jumpClassicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+jumpClassicButton.TextSize = 14.000
+jumpClassicButton.TextXAlignment = Enum.TextXAlignment.Left
+
+jumpButton.Name = "jumpButton"
+jumpButton.Parent = MainFrame
+jumpButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+jumpButton.BorderSizePixel = 0
+jumpButton.Size = UDim2.new(0, 493, 0, 17)
+jumpButton.Font = Enum.Font.Code
+jumpButton.Text = "   🦶 Set JumpPower"
+jumpButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+jumpButton.TextSize = 14.000
+jumpButton.TextXAlignment = Enum.TextXAlignment.Left
+
+JumpInput.Name = "JumpInput"
+JumpInput.Parent = jumpButton
+JumpInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+JumpInput.BorderSizePixel = 0
+JumpInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
+JumpInput.Size = UDim2.new(0, 97, 0, 15)
+JumpInput.Font = Enum.Font.Code
+JumpInput.PlaceholderText = "Count Jump"
+JumpInput.Text = ""
+JumpInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+JumpInput.TextSize = 13.000
+
+AnchorButton.Name = "AnchorButton"
+AnchorButton.Parent = MainFrame
+AnchorButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+AnchorButton.BorderSizePixel = 0
+AnchorButton.Size = UDim2.new(0, 493, 0, 17)
+AnchorButton.Font = Enum.Font.Code
+AnchorButton.Text = "   ⚓️ Anchor Character 🟥"
+AnchorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AnchorButton.TextSize = 14.000
+AnchorButton.TextXAlignment = Enum.TextXAlignment.Left
+
+FlyButton.Name = "FlyButton"
+FlyButton.Parent = MainFrame
+FlyButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+FlyButton.BorderSizePixel = 0
+FlyButton.Size = UDim2.new(0, 493, 0, 17)
+FlyButton.Font = Enum.Font.Code
+FlyButton.Text = "   ✈️ Player Fly"
+FlyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyButton.TextSize = 14.000
+FlyButton.TextXAlignment = Enum.TextXAlignment.Left
+
+FlyInput.Name = "FlyInput"
+FlyInput.Parent = FlyButton
+FlyInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+FlyInput.BorderSizePixel = 0
+FlyInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
+FlyInput.Size = UDim2.new(0, 97, 0, 15)
+FlyInput.Font = Enum.Font.Code
+FlyInput.PlaceholderText = "Count Speed"
+FlyInput.Text = ""
+FlyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyInput.TextSize = 13.000
+
+SitButton.Name = "SitButton"
+SitButton.Parent = MainFrame
+SitButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SitButton.BorderSizePixel = 0
+SitButton.Size = UDim2.new(0, 493, 0, 17)
+SitButton.Font = Enum.Font.Code
+SitButton.Text = "   🪑 Sit"
+SitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SitButton.TextSize = 14.000
+SitButton.TextXAlignment = Enum.TextXAlignment.Left
+
+Text_2.Name = "Text"
+Text_2.Parent = MainFrame
+Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_2.BackgroundTransparency = 1.000
+Text_2.Size = UDim2.new(0, 200, 0, 50)
+Text_2.Font = Enum.Font.Code
+Text_2.Text = "━━ WayPoint ━━"
+Text_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_2.TextSize = 14.000
+
+createwaypoint1Button.Name = "createwaypoint1Button"
+createwaypoint1Button.Parent = MainFrame
+createwaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint1Button.BorderSizePixel = 0
+createwaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
+createwaypoint1Button.Font = Enum.Font.Code
+createwaypoint1Button.Text = "   📍 Create WayPoint 01"
+createwaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint1Button.TextSize = 14.000
+createwaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
+
+createwaypoint2Button.Name = "createwaypoint2Button"
+createwaypoint2Button.Parent = MainFrame
+createwaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint2Button.BorderSizePixel = 0
+createwaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
+createwaypoint2Button.Font = Enum.Font.Code
+createwaypoint2Button.Text = "   📍 Create WayPoint 02"
+createwaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint2Button.TextSize = 14.000
+createwaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
+
+createwaypoint3Button.Name = "createwaypoint3Button"
+createwaypoint3Button.Parent = MainFrame
+createwaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint3Button.BorderSizePixel = 0
+createwaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
+createwaypoint3Button.Font = Enum.Font.Code
+createwaypoint3Button.Text = "   📍 Create WayPoint 03"
+createwaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint3Button.TextSize = 14.000
+createwaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
+
+teleportwaypoint1Button.Name = "teleportwaypoint1Button"
+teleportwaypoint1Button.Parent = MainFrame
+teleportwaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint1Button.BorderSizePixel = 0
+teleportwaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
+teleportwaypoint1Button.Font = Enum.Font.Code
+teleportwaypoint1Button.Text = "   📌 Teleport to WayPoint 01"
+teleportwaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint1Button.TextSize = 14.000
+teleportwaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
+
+teleportwaypoint2Button.Name = "teleportwaypoint2Button"
+teleportwaypoint2Button.Parent = MainFrame
+teleportwaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint2Button.BorderSizePixel = 0
+teleportwaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
+teleportwaypoint2Button.Font = Enum.Font.Code
+teleportwaypoint2Button.Text = "   📌 Teleport to WayPoint 02"
+teleportwaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint2Button.TextSize = 14.000
+teleportwaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
+
+teleportwaypoint3Button.Name = "teleportwaypoint3Button"
+teleportwaypoint3Button.Parent = MainFrame
+teleportwaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint3Button.BorderSizePixel = 0
+teleportwaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
+teleportwaypoint3Button.Font = Enum.Font.Code
+teleportwaypoint3Button.Text = "   📌 Teleport to WayPoint 03"
+teleportwaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint3Button.TextSize = 14.000
+teleportwaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
+
+removewaypoint1Button.Name = "removewaypoint1Button"
+removewaypoint1Button.Parent = MainFrame
+removewaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint1Button.BorderSizePixel = 0
+removewaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
+removewaypoint1Button.Font = Enum.Font.Code
+removewaypoint1Button.Text = "   🗑 Remove WayPoint 01"
+removewaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint1Button.TextSize = 14.000
+removewaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
+
+removewaypoint2Button.Name = "removewaypoint2Button"
+removewaypoint2Button.Parent = MainFrame
+removewaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint2Button.BorderSizePixel = 0
+removewaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
+removewaypoint2Button.Font = Enum.Font.Code
+removewaypoint2Button.Text = "   🗑 Remove WayPoint 02"
+removewaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint2Button.TextSize = 14.000
+removewaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
+
+removewaypoint3Button.Name = "removewaypoint3Button"
+removewaypoint3Button.Parent = MainFrame
+removewaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint3Button.BorderSizePixel = 0
+removewaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
+removewaypoint3Button.Font = Enum.Font.Code
+removewaypoint3Button.Text = "   🗑 Remove WayPoint 03"
+removewaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint3Button.TextSize = 14.000
+removewaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
+
+showplayerallButton.Name = "showplayerallButton"
+showplayerallButton.Parent = MainFrame
+showplayerallButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+showplayerallButton.BorderSizePixel = 0
+showplayerallButton.Size = UDim2.new(0, 493, 0, 17)
+showplayerallButton.Font = Enum.Font.Code
+showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟥"
+showplayerallButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+showplayerallButton.TextSize = 14.000
+showplayerallButton.TextXAlignment = Enum.TextXAlignment.Left
+
+Text_3.Name = "Text"
+Text_3.Parent = MainFrame
+Text_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_3.BackgroundTransparency = 1.000
+Text_3.Size = UDim2.new(0, 200, 0, 50)
+Text_3.Font = Enum.Font.Code
+Text_3.Text = "━━ Part ━━"
+Text_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_3.TextSize = 14.000
+
+CreatePartButton.Name = "CreatePartButton"
+CreatePartButton.Parent = MainFrame
+CreatePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CreatePartButton.BorderSizePixel = 0
+CreatePartButton.Size = UDim2.new(0, 493, 0, 17)
+CreatePartButton.Font = Enum.Font.Code
+CreatePartButton.Text = "   🧱 Create Part"
+CreatePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreatePartButton.TextSize = 14.000
+CreatePartButton.TextXAlignment = Enum.TextXAlignment.Left
+
+PartnameInput.Name = "PartnameInput"
+PartnameInput.Parent = CreatePartButton
+PartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PartnameInput.BorderSizePixel = 0
+PartnameInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
+PartnameInput.Size = UDim2.new(0, 97, 0, 15)
+PartnameInput.Font = Enum.Font.Code
+PartnameInput.PlaceholderText = "Part Name"
+PartnameInput.Text = ""
+PartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PartnameInput.TextSize = 13.000
+
+SizePartButton.Name = "SizePartButton"
+SizePartButton.Parent = MainFrame
+SizePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SizePartButton.BorderSizePixel = 0
+SizePartButton.Size = UDim2.new(0, 493, 0, 17)
+SizePartButton.Font = Enum.Font.Code
+SizePartButton.Text = "   🧱 Part Size"
+SizePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizePartButton.TextSize = 14.000
+SizePartButton.TextXAlignment = Enum.TextXAlignment.Left
+
+SizeZInput.Name = "SizeZInput"
+SizeZInput.Parent = SizePartButton
+SizeZInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeZInput.BorderSizePixel = 0
+SizeZInput.Position = UDim2.new(0.89046663, 0, 0.100000001, 0)
+SizeZInput.Size = UDim2.new(0, 51, 0, 15)
+SizeZInput.Font = Enum.Font.Code
+SizeZInput.PlaceholderText = "Z"
+SizeZInput.Text = ""
+SizeZInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeZInput.TextSize = 13.000
+
+SizeYInput.Name = "SizeYInput"
+SizeYInput.Parent = SizePartButton
+SizeYInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeYInput.BorderSizePixel = 0
+SizeYInput.Position = UDim2.new(0.766734362, 0, 0.100000001, 0)
+SizeYInput.Size = UDim2.new(0, 51, 0, 15)
+SizeYInput.Font = Enum.Font.Code
+SizeYInput.PlaceholderText = "Y"
+SizeYInput.Text = ""
+SizeYInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeYInput.TextSize = 13.000
+
+SizeXInput.Name = "SizeXInput"
+SizeXInput.Parent = SizePartButton
+SizeXInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeXInput.BorderSizePixel = 0
+SizeXInput.Position = UDim2.new(0.638945341, 0, 0.100000001, 0)
+SizeXInput.Size = UDim2.new(0, 51, 0, 15)
+SizeXInput.Font = Enum.Font.Code
+SizeXInput.PlaceholderText = "X"
+SizeXInput.Text = ""
+SizeXInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeXInput.TextSize = 13.000
+
+SizePartnameInput.Name = "SizePartnameInput"
+SizePartnameInput.Parent = SizePartButton
+SizePartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizePartnameInput.BorderSizePixel = 0
+SizePartnameInput.Position = UDim2.new(0.415383369, 0, 0.100000001, 0)
+SizePartnameInput.Size = UDim2.new(0, 97, 0, 15)
+SizePartnameInput.Font = Enum.Font.Code
+SizePartnameInput.PlaceholderText = "Part Name"
+SizePartnameInput.Text = ""
+SizePartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizePartnameInput.TextSize = 13.000
+
+PositionPartButton.Name = "PositionPartButton"
+PositionPartButton.Parent = MainFrame
+PositionPartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+PositionPartButton.BorderSizePixel = 0
+PositionPartButton.Size = UDim2.new(0, 493, 0, 17)
+PositionPartButton.Font = Enum.Font.Code
+PositionPartButton.Text = "   🧱 Part Position"
+PositionPartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionPartButton.TextSize = 14.000
+PositionPartButton.TextXAlignment = Enum.TextXAlignment.Left
+
+PositionZInput.Name = "PositionZInput"
+PositionZInput.Parent = PositionPartButton
+PositionZInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionZInput.BorderSizePixel = 0
+PositionZInput.Position = UDim2.new(0.89046663, 0, 0.100000001, 0)
+PositionZInput.Size = UDim2.new(0, 51, 0, 15)
+PositionZInput.Font = Enum.Font.Code
+PositionZInput.PlaceholderText = "Z"
+PositionZInput.Text = ""
+PositionZInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionZInput.TextSize = 13.000
+
+PositionYInput.Name = "PositionYInput"
+PositionYInput.Parent = PositionPartButton
+PositionYInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionYInput.BorderSizePixel = 0
+PositionYInput.Position = UDim2.new(0.766734362, 0, 0.100000001, 0)
+PositionYInput.Size = UDim2.new(0, 51, 0, 15)
+PositionYInput.Font = Enum.Font.Code
+PositionYInput.PlaceholderText = "Y"
+PositionYInput.Text = ""
+PositionYInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionYInput.TextSize = 13.000
+
+PositionXInput.Name = "PositionXInput"
+PositionXInput.Parent = PositionPartButton
+PositionXInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionXInput.BorderSizePixel = 0
+PositionXInput.Position = UDim2.new(0.638945341, 0, 0.100000001, 0)
+PositionXInput.Size = UDim2.new(0, 51, 0, 15)
+PositionXInput.Font = Enum.Font.Code
+PositionXInput.PlaceholderText = "X"
+PositionXInput.Text = ""
+PositionXInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionXInput.TextSize = 13.000
+
+PositionPartnameInput.Name = "PositionPartnameInput"
+PositionPartnameInput.Parent = PositionPartButton
+PositionPartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionPartnameInput.BorderSizePixel = 0
+PositionPartnameInput.Position = UDim2.new(0.415383369, 0, 0.100000001, 0)
+PositionPartnameInput.Size = UDim2.new(0, 97, 0, 15)
+PositionPartnameInput.Font = Enum.Font.Code
+PositionPartnameInput.PlaceholderText = "Part Name"
+PositionPartnameInput.Text = ""
+PositionPartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionPartnameInput.TextSize = 13.000
+
+RemovePartButton.Name = "RemovePartButton"
+RemovePartButton.Parent = MainFrame
+RemovePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+RemovePartButton.BorderSizePixel = 0
+RemovePartButton.Size = UDim2.new(0, 493, 0, 17)
+RemovePartButton.Font = Enum.Font.Code
+RemovePartButton.Text = "   🗑 Remove Part"
+RemovePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RemovePartButton.TextSize = 14.000
+RemovePartButton.TextXAlignment = Enum.TextXAlignment.Left
+
+RemovePartnameInput.Name = "RemovePartnameInput"
+RemovePartnameInput.Parent = RemovePartButton
+RemovePartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+RemovePartnameInput.BorderSizePixel = 0
+RemovePartnameInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
+RemovePartnameInput.Size = UDim2.new(0, 97, 0, 15)
+RemovePartnameInput.Font = Enum.Font.Code
+RemovePartnameInput.PlaceholderText = "Part Name"
+RemovePartnameInput.Text = ""
+RemovePartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+RemovePartnameInput.TextSize = 13.000
+
+PlayersFrame.Name = "PlayersFrame"
+PlayersFrame.Parent = Storage
+PlayersFrame.Active = true
+PlayersFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayersFrame.BackgroundTransparency = 1.000
+PlayersFrame.BorderSizePixel = 0
+PlayersFrame.Position = UDim2.new(0.0154142585, 0, 0, 0)
+PlayersFrame.Size = UDim2.new(0, 511, 0, 307)
+PlayersFrame.Visible = false
+PlayersFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
+PlayersFrame.ScrollBarThickness = 5
+
+UIGridLayout_2.Parent = PlayersFrame
+UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_2.CellSize = UDim2.new(0, 493, 0, 20)
+
+CheckFrame.Name = "CheckFrame"
+CheckFrame.Parent = Storage
+CheckFrame.Active = true
+CheckFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CheckFrame.BackgroundTransparency = 1.000
+CheckFrame.BorderSizePixel = 0
+CheckFrame.Position = UDim2.new(0.0154142585, 0, 0, 0)
+CheckFrame.Size = UDim2.new(0, 511, 0, 307)
+CheckFrame.Visible = false
+CheckFrame.CanvasSize = UDim2.new(0, 0, 0.200000003, 0)
+CheckFrame.ScrollBarThickness = 5
+
+UIGridLayout_3.Parent = CheckFrame
+UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_3.CellSize = UDim2.new(0, 493, 0, 20)
+
+Text_4.Name = "Text"
+Text_4.Parent = CheckFrame
+Text_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_4.BackgroundTransparency = 1.000
+Text_4.Size = UDim2.new(0, 200, 0, 50)
+Text_4.Font = Enum.Font.Code
+Text_4.Text = "━━ Character ━━"
+Text_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_4.TextSize = 14.000
+
+CheckWalkSpeedButton.Name = "CheckWalkSpeedButton"
+CheckWalkSpeedButton.Parent = CheckFrame
+CheckWalkSpeedButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckWalkSpeedButton.BorderSizePixel = 0
+CheckWalkSpeedButton.Size = UDim2.new(0, 493, 0, 17)
+CheckWalkSpeedButton.Font = Enum.Font.Code
+CheckWalkSpeedButton.Text = "   🔍 Check WalkSpeed : N/A"
+CheckWalkSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckWalkSpeedButton.TextSize = 14.000
+CheckWalkSpeedButton.TextXAlignment = Enum.TextXAlignment.Left
+
+CheckJumPowerButton.Name = "CheckJumPowerButton"
+CheckJumPowerButton.Parent = CheckFrame
+CheckJumPowerButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckJumPowerButton.BorderSizePixel = 0
+CheckJumPowerButton.Size = UDim2.new(0, 493, 0, 17)
+CheckJumPowerButton.Font = Enum.Font.Code
+CheckJumPowerButton.Text = "   🔍 Check JumPower : N/A"
+CheckJumPowerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckJumPowerButton.TextSize = 14.000
+CheckJumPowerButton.TextXAlignment = Enum.TextXAlignment.Left
+
+CheckPositionButton.Name = "CheckPositionButton"
+CheckPositionButton.Parent = CheckFrame
+CheckPositionButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckPositionButton.BorderSizePixel = 0
+CheckPositionButton.Size = UDim2.new(0, 493, 0, 17)
+CheckPositionButton.Font = Enum.Font.Code
+CheckPositionButton.Text = "   🔍 Check Position : N/A"
+CheckPositionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckPositionButton.TextSize = 14.000
+CheckPositionButton.TextXAlignment = Enum.TextXAlignment.Left
+
+Bar.Name = "Bar"
+Bar.Parent = ScreenGui
+Bar.BackgroundColor3 = Color3.fromRGB(33, 13, 35)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.248045206, 0, 0.233461261, 0)
+Bar.Size = UDim2.new(0, 619, 0, 17)
+
+OffButton.Name = "OffButton"
+OffButton.Parent = Bar
+OffButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OffButton.BackgroundTransparency = 1.000
+OffButton.Position = UDim2.new(0.883683443, 0, 0, 0)
+OffButton.Size = UDim2.new(0, 18, 0, 17)
+OffButton.Font = Enum.Font.Code
+OffButton.Text = "-"
+OffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OffButton.TextSize = 14.000
+
+SmallButton.Name = "SmallButton"
+SmallButton.Parent = Bar
+SmallButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SmallButton.BackgroundTransparency = 1.000
+SmallButton.Position = UDim2.new(0.930533171, 0, 0, 0)
+SmallButton.Size = UDim2.new(0, 18, 0, 17)
+SmallButton.Font = Enum.Font.Code
+SmallButton.Text = "[]"
+SmallButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SmallButton.TextSize = 14.000
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = Bar
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.BackgroundTransparency = 1.000
+CloseButton.Position = UDim2.new(0.970920861, 0, 0, 0)
+CloseButton.Size = UDim2.new(0, 18, 0, 17)
+CloseButton.Font = Enum.Font.Code
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 14.000
+
+TextName.Name = "TextName"
+TextName.Parent = Bar
+TextName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextName.BackgroundTransparency = 1.000
+TextName.Position = UDim2.new(0.0145395799, 0, 0, 0)
+TextName.Size = UDim2.new(0, 191, 0, 17)
+TextName.Font = Enum.Font.Code
+TextName.Text = "AVG Script Hub"
+TextName.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextName.TextSize = 10.000
+TextName.TextXAlignment = Enum.TextXAlignment.Left
+------------------------------------------------------------
+---------------- NewButtonFunction
+------------------------------------------------------------
+local uis = game:GetService("UserInputService")
+local Player = game.Players.LocalPlayer
+local allplr = game.Players:GetChildren()
+local cha = game.Players.LocalPlayer.Character
+local db2 = true
+uis.InputBegan:Connect(function(pass, chat)
+	if chat then return end
+	if pass.KeyCode == Enum.KeyCode.C and ranteleport.Value == true then
+		db2 = false
+		local np = allplr[math.random(1,#allplr)]
+		if db2 == false and np.Team ~= Player.Team then
+			local nch = np.Character
+			if nch ~= nil and nch.AirHP.Value > 0 then
+				local humrp = cha:FindFirstChild("HumanoidRootPart")
+				local nhumrp = nch:FindFirstChild("HumanoidRootPart")
+				if humrp ~= nil and nhumrp ~= nil then
+					humrp.CFrame = nhumrp.CFrame
+					db2 = true
+				end
+			end
+
+		end
+	end
+end)
+local CurrentCamera = game.Workspace.CurrentCamera
+local Mouse = Player:GetMouse()
+
+function lookAt(humpos, target)
+	local ForwardVector = (target - humpos).Unit
+	local RightVector = ForwardVector:Cross(Vector3.new(0, 1, 0))
+	local UpVector2 = RightVector:Cross(ForwardVector)
+
+	return CFrame.fromMatrix(humpos, RightVector, UpVector2)
+end
+local db = true
+
+Mouse.Button1Down:Connect(function()
+	db = false
+	if db == false and headlock.Value == true then
+		local Character = game:GetService("Players").LocalPlayer.Character
+		local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+		local region = Region3.new(Mouse.Hit.p - Vector3.new(.2,.2,.2),Mouse.Hit.p + Vector3.new(.2,.2,.2))
+		local inregion = game:GetService("Workspace"):FindPartsInRegion3(region,Character.HumanoidRootPart,math.huge)
+		for i, hit in pairs(inregion) do
+			if hit.Parent:FindFirstChild("Humanoid") and db == false then
+				db = true
+				CurrentCamera.CFrame = lookAt(HumanoidRootPart.Position, hit.Parent:FindFirstChild("Head").Position+Vector3.new(0,-1,0))
+				wait()
+			end
+		end
+	end
+end)
+------------------------------------------------------------
+---------------- CreateButton
+------------------------------------------------------------
+local TextAresanal = createtext("Text",MainFrame,"Arsenal")
+local showarsenalButton = createbutton("ShowPlayersArsenalButton",MainFrame,"🔍 Show All Players (Arsenal) 🟥")
+local headlockButton = createbutton("HeadLockButton",MainFrame,"🔫 Lock Head (Arsenal) 🟥")
+local ranteleportButton = createbutton("RandomTeleportButton",MainFrame,"🔮 Random Teleport to Players (Arsenal) 🟥")
+------------------------------------------------------------
+---------------- NewButtonClick
+------------------------------------------------------------
+showarsenalButton.MouseButton1Click:Connect(function()
+	if showplayerArsenal.Value == false then
+		showplayerArsenal.Value = true
+		showallplrarsenal(showplayerArsenal)
+		showarsenalButton.Text = "   🔍 Show All Players (Arsenal) 🟥"
+	else
+		showplayerArsenal.Value = false
+		showallplrarsenal(showplayerArsenal)
+		showarsenalButton.Text = "   🔍 Show All Players (Arsenal) 🟩"
+	end
+end)
+headlockButton.MouseButton1Click:Connect(function()
+	if headlock.Value == false then
+		headlock.Value = true
+		headlockButton.Text = "   🔫 Lock Head (Arsenal) 🟩"
+	else
+		headlock.Value = false
+		headlockButton.Text = "   🔫 Lock Head (Arsenal) 🟥"
+	end
+end)
+ranteleportButton.MouseButton1Click:Connect(function()
+	if ranteleport.Value == false then
+		ranteleport.Value = true
+		ranteleportButton.Text = "   🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ] 🟩"
+	else
+		ranteleport.Value = false
+		ranteleportButton.Text = "   🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ] 🟥"
+	end
+end)
+function GetPing()
+	local Ping = 300-((1/wait())*10)
+	if Ping < 1 then
+		Ping = 1
+	end
+	return math.floor(Ping)
+end
+while wait() do
+	local fps = ""
+	local ping = ""
+	if math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5) < 10 then
+		fps = "🟥"
+	elseif math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5) < 20 then
+		fps = "🟧"
+	elseif math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5) < 30 then
+		fps = "🟨"
+	elseif math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5) < 70 then
+		fps = "🟩"
+	elseif math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5) > 70 then
+		fps = "🟪"
+	end
+	if GetPing() > 100 then
+		ping = "🟥"
+	elseif GetPing() > 80 then
+		ping = "🟧"
+	elseif GetPing() > 50 then
+		ping = "🟨"
+	elseif GetPing() > 10 then
+		ping = "🟩"
+	elseif GetPing() < 10 then
+		ping = "🟪"
+	end
+	TextName.Text = "AVG Script Hub     "..math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5).." Fps  "..fps.." Ping "..GetPing().." ms "..ping
+end
