@@ -22,14 +22,78 @@
 ║██████████████████████████████████████████████████████████████████████
 ╚════════════════════════════════════════════════════════════════════╝
 ]]--
--- Create By AVG Script Hub
+-- Create By AVG Script Hub v0.0.3
+------------------------------------------------------------
+local ColorButton = Color3.fromRGB(0, 0, 0)
+local ColorBackground = Color3.fromRGB(0, 0, 0)
+local ColorProperties = Color3.fromRGB(0, 0, 0)
+local ColorBar = Color3.fromRGB(0, 0, 0)
+local ColorText = Color3.fromRGB(0, 0, 0)
+local ColorInput = Color3.fromRGB(0, 0, 0)
+function DarkTeam()
+	ColorButton = Color3.fromRGB(58, 58, 58)
+	ColorBackground = Color3.fromRGB(24, 24, 24)
+	ColorProperties = Color3.fromRGB(44, 44, 44)
+	ColorBar = Color3.fromRGB(0, 0, 0)
+	ColorText = Color3.fromRGB(255, 255, 255)
+	ColorInput = Color3.fromRGB(0, 0, 0)
+end
+function LightTeam()
+	ColorBar = Color3.fromRGB(181, 181, 181)
+	ColorProperties = Color3.fromRGB(120, 120, 120)
+	ColorBackground = Color3.fromRGB(156, 156, 156)
+	ColorInput = Color3.fromRGB(156, 156, 156)
+	ColorButton = Color3.fromRGB(255, 255, 255)
+	ColorText = Color3.fromRGB(0, 0, 0)
+end
+function RedTeam()
+	ColorBar = Color3.fromRGB(91, 0, 0)
+	ColorProperties = Color3.fromRGB(125, 0, 0)
+	ColorBackground = Color3.fromRGB(180, 0, 0)
+	ColorInput = Color3.fromRGB(180, 0, 0)
+	ColorButton = Color3.fromRGB(235, 0, 0)
+	ColorText = Color3.fromRGB(0, 0, 0)
+end
+function GreenTeam()
+	ColorBar = Color3.fromRGB(16, 91, 0)
+	ColorProperties = Color3.fromRGB(23, 130, 0)
+	ColorBackground = Color3.fromRGB(30, 163, 0)
+	ColorInput = Color3.fromRGB(30, 163, 0)
+	ColorButton = Color3.fromRGB(45, 227, 0)
+	ColorText = Color3.fromRGB(0, 0, 0)
+end
+function PurpleTeam()
+	ColorBar = Color3.fromRGB(83, 0, 91)
+	ColorProperties = Color3.fromRGB(105, 0, 117)
+	ColorBackground = Color3.fromRGB(136, 0, 154)
+	ColorInput = Color3.fromRGB(136, 0, 154)
+	ColorButton = Color3.fromRGB(179, 0, 206)
+	ColorText = Color3.fromRGB(255, 255, 255)
+end
+function PinkTeam()
+	ColorBar = Color3.fromRGB(226, 0, 255)
+	ColorProperties = Color3.fromRGB(244, 76, 255)
+	ColorBackground = Color3.fromRGB(255, 126, 245)
+	ColorInput = Color3.fromRGB(255, 126, 245)
+	ColorButton = Color3.fromRGB(255, 155, 232)
+	ColorText = Color3.fromRGB(0, 0, 0)
+end
+function PastelTeam()
+	ColorBar = Color3.fromRGB(94, 97, 255)
+	ColorProperties = Color3.fromRGB(157, 159, 255)
+	ColorBackground = Color3.fromRGB(166, 220, 255)
+	ColorInput = Color3.fromRGB(251, 206, 255)
+	ColorButton = Color3.fromRGB(255, 155, 232)
+	ColorText = Color3.fromRGB(0, 0, 0)
+end
+DarkTeam()
 ------------------------------------------------------------
 ---------------- Starting
 ------------------------------------------------------------
 local STSCEEN = Instance.new("ScreenGui",game.CoreGui)
 local STFRAME = Instance.new("Frame",STSCEEN)
 local STTEXT = Instance.new("TextLabel",STFRAME)
-STFRAME.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+STFRAME.BackgroundColor3 = ColorBackground
 STFRAME.BorderSizePixel = 0
 STFRAME.Position = UDim2.new(0.248045176, 0, 0.233461261, 0)
 STFRAME.Size = UDim2.new(0, 619, 0, 324)
@@ -39,7 +103,7 @@ STTEXT.Size = UDim2.new(0, 200, 0, 50)
 STTEXT.Font = Enum.Font.Cartoon
 STTEXT.Text = ""
 STTEXT.Position = UDim2.new(0.338, 0,0.423, 0)
-STTEXT.TextColor3 = Color3.fromRGB(255, 255, 255)
+STTEXT.TextColor3 = ColorText
 STTEXT.TextSize = 50.000
 local STTEXT2 = Instance.new("TextLabel",STFRAME)
 STTEXT2.Name = "Text"
@@ -48,7 +112,7 @@ STTEXT2.Size = UDim2.new(0, 200, 0, 50)
 STTEXT2.Font = Enum.Font.Cartoon
 STTEXT2.Text = "Avegee(AVG) Hub"
 STTEXT2.Position = UDim2.new(0.338, 0,0.323, 0)
-STTEXT2.TextColor3 = Color3.fromRGB(255, 255, 255)
+STTEXT2.TextColor3 = ColorText
 STTEXT2.TextSize = 25.000
 
 local times = 0
@@ -122,10 +186,10 @@ function anchor(Button)
 	local cha = game:GetService("Players").LocalPlayer.Character
 	if cha.HumanoidRootPart.Anchored == false then
 		cha.HumanoidRootPart.Anchored = true
-		Button.Text = "   ⚓️ Anchor Character 🟩"
+		Button.Text = "   🟩 ⚓️ Anchor Character"
 	else
 		cha.HumanoidRootPart.Anchored = false
-		Button.Text = "   ⚓️ Anchor Character 🟥"
+		Button.Text = "   🟥 ⚓️ Anchor Character"
 	end
 end
 function fly(speed)
@@ -317,12 +381,12 @@ function waitcmd(parent)
 	local Button = Instance.new("TextButton")
 	Button.Name = "Wait"
 	Button.Parent = parent
-	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BackgroundColor3 = ColorButton
 	Button.BorderSizePixel = 0
 	Button.Size = UDim2.new(0, 493, 0, 17)
 	Button.Font = Enum.Font.Code
 	Button.Text = "   Wait"
-	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextColor3 = ColorText
 	Button.TextSize = 14.000
 	Button.TextXAlignment = Enum.TextXAlignment.Left
 	local waits = Instance.new("IntValue",Button)
@@ -342,12 +406,12 @@ function teleportcmd(parent)
 	local Button = Instance.new("TextButton")
 	Button.Name = "Teleport"
 	Button.Parent = parent
-	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BackgroundColor3 = ColorButton
 	Button.BorderSizePixel = 0
 	Button.Size = UDim2.new(0, 493, 0, 17)
 	Button.Font = Enum.Font.Code
 	Button.Text = "   Teleport to"
-	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextColor3 = ColorText
 	Button.TextSize = 14.000
 	Button.TextXAlignment = Enum.TextXAlignment.Left
 	local posX = Instance.new("IntValue",Button)
@@ -370,12 +434,12 @@ function createbutton(name,parent,text)
 	local Button = Instance.new("TextButton")
 	Button.Name = name
 	Button.Parent = parent
-	Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+	Button.BackgroundColor3 = ColorButton
 	Button.BorderSizePixel = 0
 	Button.Size = UDim2.new(0, 493, 0, 17)
 	Button.Font = Enum.Font.Code
 	Button.Text = "   "..text
-	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextColor3 = ColorText
 	Button.TextSize = 14.000
 	Button.TextXAlignment = Enum.TextXAlignment.Left
 	return Button
@@ -384,7 +448,7 @@ function createtext(name,parent,text)
 	local Text = Instance.new("TextLabel")
 	Text.Name = name
 	Text.Parent = parent
-	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundColor3 = ColorText
 	Text.BackgroundTransparency = 1.000
 	Text.Size = UDim2.new(0, 200, 0, 50)
 	Text.Font = Enum.Font.Code
@@ -401,12 +465,12 @@ function buttonplauers(parent)
 			local Button = Instance.new("TextButton")
 			Button.Name = temp.Name
 			Button.Parent = parent
-			Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+			Button.BackgroundColor3 = ColorButton
 			Button.BorderSizePixel = 0
 			Button.Size = UDim2.new(0, 493, 0, 17)
 			Button.Font = Enum.Font.Code
 			Button.Text = "   🚀 Teleport to "..temp.Name
-			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Button.TextColor3 = ColorText
 			Button.TextSize = 14.000
 			Button.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -622,10 +686,10 @@ showplayerallButton.MouseButton1Click:Connect(function()
 	showallplr(showplayer)
 	if showplayer.Value == false then
 		showplayer.Value = true
-		showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟩"
+		showplayerallButton.Text = "   🟩 🔍 Show WayPoint on All Players"
 	else
 		showplayer.Value = false
-		showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟥"
+		showplayerallButton.Text = "   🟥 🔍 Show WayPoint on All Players"
 	end
 end)
 CreatePartButton.MouseButton1Click:Connect(function()
@@ -792,7 +856,7 @@ UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout_4.CellSize = UDim2.new(0, 400, 0, 20)
 
 Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+Frame.BackgroundColor3 = ColorBackground
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.248045176, 0, 0.233461261, 0)
 Frame.Size = UDim2.new(0, 619, 0, 324)
@@ -800,7 +864,7 @@ Frame.Size = UDim2.new(0, 619, 0, 324)
 Properties.Name = "Properties"
 Properties.Parent = Frame
 Properties.Active = true
-Properties.BackgroundColor3 = Color3.fromRGB(62, 24, 66)
+Properties.BackgroundColor3 = ColorProperties
 Properties.BorderSizePixel = 0
 Properties.Position = UDim2.new(0, 0, 0.0524691343, 0)
 Properties.Size = UDim2.new(0, 100, 0, 307)
@@ -809,51 +873,51 @@ Properties.ScrollBarThickness = 5
 
 MainButton.Name = "MainButton"
 MainButton.Parent = Properties
-MainButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+MainButton.BackgroundColor3 = ColorButton
 MainButton.BorderSizePixel = 0
 MainButton.Position = UDim2.new(0.0800000057, 0, 0.000721935648, 0)
 MainButton.Size = UDim2.new(0, 83, 0, 17)
 MainButton.Font = Enum.Font.Code
 MainButton.Text = "Main"
-MainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainButton.TextColor3 = ColorText
 MainButton.TextSize = 14.000
 
 PlayersButton.Name = "PlayersButton"
 PlayersButton.Parent = Properties
-PlayersButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+PlayersButton.BackgroundColor3 = ColorButton
 PlayersButton.BorderSizePixel = 0
 PlayersButton.Position = UDim2.new(0.0799999982, 0, 0.00762963016, 0)
 PlayersButton.Size = UDim2.new(0, 83, 0, 17)
 PlayersButton.Font = Enum.Font.Code
 PlayersButton.Text = "Players"
-PlayersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayersButton.TextColor3 = ColorText
 PlayersButton.TextSize = 14.000
 
 CheckButton.Name = "CheckButton"
 CheckButton.Parent = Properties
-CheckButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckButton.BackgroundColor3 = ColorButton
 CheckButton.BorderSizePixel = 0
 CheckButton.Position = UDim2.new(0.0799999982, 0, 0.0144999996, 0)
 CheckButton.Size = UDim2.new(0, 83, 0, 17)
 CheckButton.Font = Enum.Font.Code
 CheckButton.Text = "Check"
-CheckButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckButton.TextColor3 = ColorText
 CheckButton.TextSize = 14.000
 
 FunctionButton.Name = "FunctionButton"
 FunctionButton.Parent = Properties
-FunctionButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+FunctionButton.BackgroundColor3 = ColorButton
 FunctionButton.BorderSizePixel = 0
 FunctionButton.Position = UDim2.new(0.0799999982, 0, 0.0215987656, 0)
 FunctionButton.Size = UDim2.new(0, 83, 0, 17)
 FunctionButton.Font = Enum.Font.Code
 FunctionButton.Text = "Function"
-FunctionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FunctionButton.TextColor3 = ColorText
 FunctionButton.TextSize = 14.000
 
 Storage.Name = "Storage"
 Storage.Parent = Frame
-Storage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Storage.BackgroundColor3 = ColorButton
 Storage.BackgroundTransparency = 1.000
 Storage.Position = UDim2.new(0.161550894, 0, 0.0524691343, 0)
 Storage.Size = UDim2.new(0, 519, 0, 307)
@@ -877,12 +941,12 @@ UIGridLayout.CellSize = UDim2.new(0, 493, 0, 20)
 
 Text.Name = "Text"
 Text.Parent = MainFrame
-Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text.BackgroundColor3 = ColorButton
 Text.BackgroundTransparency = 1.000
 Text.Size = UDim2.new(0, 200, 0, 50)
 Text.Font = Enum.Font.Code
 Text.Text = "━━ Character ━━"
-Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextColor3 = ColorText
 Text.TextSize = 14.000
 
 FunctionFrame.Name = "FunctionFrame"
@@ -896,7 +960,7 @@ FunctionFrame.Size = UDim2.new(0, 519, 0, 302)
 Command.Name = "Command"
 Command.Parent = FunctionFrame
 Command.Active = true
-Command.BackgroundColor3 = Color3.fromRGB(62, 24, 66)
+Command.BackgroundColor3 = ColorProperties
 Command.BorderSizePixel = 0
 Command.Position = UDim2.new(0.807321787, 0, -0.0170672908, 0)
 Command.Size = UDim2.new(0, 100, 0, 307)
@@ -905,35 +969,35 @@ Command.ScrollBarThickness = 5
 
 TeleportCmdButton.Name = "TeleportCmdButton"
 TeleportCmdButton.Parent = Command
-TeleportCmdButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+TeleportCmdButton.BackgroundColor3 = ColorButton
 TeleportCmdButton.BorderSizePixel = 0
 TeleportCmdButton.Position = UDim2.new(0.0800000057, 0, 0.000721935648, 0)
 TeleportCmdButton.Size = UDim2.new(0, 83, 0, 17)
 TeleportCmdButton.Font = Enum.Font.Code
 TeleportCmdButton.Text = "Teleport"
-TeleportCmdButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportCmdButton.TextColor3 = ColorText
 TeleportCmdButton.TextSize = 14.000
 
 WaitCmdButton.Name = "WaitCmdButton"
 WaitCmdButton.Parent = Command
-WaitCmdButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+WaitCmdButton.BackgroundColor3 = ColorButton
 WaitCmdButton.BorderSizePixel = 0
 WaitCmdButton.Position = UDim2.new(0.0799999982, 0, 0.00762963016, 0)
 WaitCmdButton.Size = UDim2.new(0, 83, 0, 17)
 WaitCmdButton.Font = Enum.Font.Code
 WaitCmdButton.Text = "Wait"
-WaitCmdButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+WaitCmdButton.TextColor3 = ColorText
 WaitCmdButton.TextSize = 14.000
 
 RunButton.Name = "RunButton"
 RunButton.Parent = Command
-RunButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+RunButton.BackgroundColor3 = ColorButton
 RunButton.BorderSizePixel = 0
 RunButton.Position = UDim2.new(0.0799999982, 0, 0.021, 0)
 RunButton.Size = UDim2.new(0, 83, 0, 17)
 RunButton.Font = Enum.Font.Code
 RunButton.Text = "Run!"
-RunButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RunButton.TextColor3 = ColorText
 RunButton.TextSize = 14.000
 
 Showcmd.Name = "Showcmd"
@@ -950,114 +1014,114 @@ Showcmd.ScrollBarThickness = 5
 
 SpeedClassicButton.Name = "SpeedClassicButton"
 SpeedClassicButton.Parent = MainFrame
-SpeedClassicButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SpeedClassicButton.BackgroundColor3 = ColorButton
 SpeedClassicButton.BorderSizePixel = 0
 SpeedClassicButton.Size = UDim2.new(0, 493, 0, 17)
 SpeedClassicButton.Font = Enum.Font.Code
 SpeedClassicButton.Text = "   ⚡️ WalkSpeed ( Classic )"
-SpeedClassicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedClassicButton.TextColor3 = ColorText
 SpeedClassicButton.TextSize = 14.000
 SpeedClassicButton.TextXAlignment = Enum.TextXAlignment.Left
 
 SpeedButton.Name = "SpeedButton"
 SpeedButton.Parent = MainFrame
-SpeedButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SpeedButton.BackgroundColor3 = ColorButton
 SpeedButton.BorderSizePixel = 0
 SpeedButton.Size = UDim2.new(0, 493, 0, 17)
 SpeedButton.Font = Enum.Font.Code
 SpeedButton.Text = "   ⚡️ Set WalkSpeed"
-SpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedButton.TextColor3 = ColorText
 SpeedButton.TextSize = 14.000
 SpeedButton.TextXAlignment = Enum.TextXAlignment.Left
 
 SpeedInput.Name = "SpeedInput"
 SpeedInput.Parent = SpeedButton
-SpeedInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SpeedInput.BackgroundColor3 = ColorInput
 SpeedInput.BorderSizePixel = 0
 SpeedInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
 SpeedInput.Size = UDim2.new(0, 97, 0, 15)
 SpeedInput.Font = Enum.Font.Code
 SpeedInput.PlaceholderText = "Count Speed"
 SpeedInput.Text = ""
-SpeedInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedInput.TextColor3 = ColorText
 SpeedInput.TextSize = 13.000
 
 jumpClassicButton.Name = "jumpClassicButton"
 jumpClassicButton.Parent = MainFrame
-jumpClassicButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+jumpClassicButton.BackgroundColor3 = ColorButton
 jumpClassicButton.BorderSizePixel = 0
 jumpClassicButton.Size = UDim2.new(0, 493, 0, 17)
 jumpClassicButton.Font = Enum.Font.Code
 jumpClassicButton.Text = "   🦶 JumpPower ( Classic )"
-jumpClassicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+jumpClassicButton.TextColor3 = ColorText
 jumpClassicButton.TextSize = 14.000
 jumpClassicButton.TextXAlignment = Enum.TextXAlignment.Left
 
 jumpButton.Name = "jumpButton"
 jumpButton.Parent = MainFrame
-jumpButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+jumpButton.BackgroundColor3 = ColorButton
 jumpButton.BorderSizePixel = 0
 jumpButton.Size = UDim2.new(0, 493, 0, 17)
 jumpButton.Font = Enum.Font.Code
 jumpButton.Text = "   🦶 Set JumpPower"
-jumpButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+jumpButton.TextColor3 = ColorText
 jumpButton.TextSize = 14.000
 jumpButton.TextXAlignment = Enum.TextXAlignment.Left
 
 JumpInput.Name = "JumpInput"
 JumpInput.Parent = jumpButton
-JumpInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+JumpInput.BackgroundColor3 = ColorInput
 JumpInput.BorderSizePixel = 0
 JumpInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
 JumpInput.Size = UDim2.new(0, 97, 0, 15)
 JumpInput.Font = Enum.Font.Code
 JumpInput.PlaceholderText = "Count Jump"
 JumpInput.Text = ""
-JumpInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+JumpInput.TextColor3 = ColorText
 JumpInput.TextSize = 13.000
 
 AnchorButton.Name = "AnchorButton"
 AnchorButton.Parent = MainFrame
-AnchorButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+AnchorButton.BackgroundColor3 = ColorButton
 AnchorButton.BorderSizePixel = 0
 AnchorButton.Size = UDim2.new(0, 493, 0, 17)
 AnchorButton.Font = Enum.Font.Code
-AnchorButton.Text = "   ⚓️ Anchor Character 🟥"
-AnchorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AnchorButton.Text = "   🟥 ⚓️ Anchor Character"
+AnchorButton.TextColor3 = ColorText
 AnchorButton.TextSize = 14.000
 AnchorButton.TextXAlignment = Enum.TextXAlignment.Left
 
 FlyButton.Name = "FlyButton"
 FlyButton.Parent = MainFrame
-FlyButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+FlyButton.BackgroundColor3 = ColorButton
 FlyButton.BorderSizePixel = 0
 FlyButton.Size = UDim2.new(0, 493, 0, 17)
 FlyButton.Font = Enum.Font.Code
 FlyButton.Text = "   ✈️ Player Fly"
-FlyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyButton.TextColor3 = ColorText
 FlyButton.TextSize = 14.000
 FlyButton.TextXAlignment = Enum.TextXAlignment.Left
 
 FlyInput.Name = "FlyInput"
 FlyInput.Parent = FlyButton
-FlyInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+FlyInput.BackgroundColor3 = ColorInput
 FlyInput.BorderSizePixel = 0
 FlyInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
 FlyInput.Size = UDim2.new(0, 97, 0, 15)
 FlyInput.Font = Enum.Font.Code
 FlyInput.PlaceholderText = "Count Speed"
 FlyInput.Text = ""
-FlyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyInput.TextColor3 = ColorText
 FlyInput.TextSize = 13.000
 
 SitButton.Name = "SitButton"
 SitButton.Parent = MainFrame
-SitButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SitButton.BackgroundColor3 = ColorButton
 SitButton.BorderSizePixel = 0
 SitButton.Size = UDim2.new(0, 493, 0, 17)
 SitButton.Font = Enum.Font.Code
 SitButton.Text = "   🪑 Sit"
-SitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SitButton.TextColor3 = ColorText
 SitButton.TextSize = 14.000
 SitButton.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1068,116 +1132,116 @@ Text_2.BackgroundTransparency = 1.000
 Text_2.Size = UDim2.new(0, 200, 0, 50)
 Text_2.Font = Enum.Font.Code
 Text_2.Text = "━━ WayPoint ━━"
-Text_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_2.TextColor3 = ColorText
 Text_2.TextSize = 14.000
 
 createwaypoint1Button.Name = "createwaypoint1Button"
 createwaypoint1Button.Parent = MainFrame
-createwaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint1Button.BackgroundColor3 = ColorButton
 createwaypoint1Button.BorderSizePixel = 0
 createwaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
 createwaypoint1Button.Font = Enum.Font.Code
 createwaypoint1Button.Text = "   📍 Create WayPoint 01"
-createwaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint1Button.TextColor3 = ColorText
 createwaypoint1Button.TextSize = 14.000
 createwaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
 
 createwaypoint2Button.Name = "createwaypoint2Button"
 createwaypoint2Button.Parent = MainFrame
-createwaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint2Button.BackgroundColor3 = ColorButton
 createwaypoint2Button.BorderSizePixel = 0
 createwaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
 createwaypoint2Button.Font = Enum.Font.Code
 createwaypoint2Button.Text = "   📍 Create WayPoint 02"
-createwaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint2Button.TextColor3 = ColorText
 createwaypoint2Button.TextSize = 14.000
 createwaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
 
 createwaypoint3Button.Name = "createwaypoint3Button"
 createwaypoint3Button.Parent = MainFrame
-createwaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+createwaypoint3Button.BackgroundColor3 = ColorButton
 createwaypoint3Button.BorderSizePixel = 0
 createwaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
 createwaypoint3Button.Font = Enum.Font.Code
 createwaypoint3Button.Text = "   📍 Create WayPoint 03"
-createwaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+createwaypoint3Button.TextColor3 = ColorText
 createwaypoint3Button.TextSize = 14.000
 createwaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
 
 teleportwaypoint1Button.Name = "teleportwaypoint1Button"
 teleportwaypoint1Button.Parent = MainFrame
-teleportwaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint1Button.BackgroundColor3 = ColorButton
 teleportwaypoint1Button.BorderSizePixel = 0
 teleportwaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
 teleportwaypoint1Button.Font = Enum.Font.Code
 teleportwaypoint1Button.Text = "   📌 Teleport to WayPoint 01"
-teleportwaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint1Button.TextColor3 = ColorText
 teleportwaypoint1Button.TextSize = 14.000
 teleportwaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
 
 teleportwaypoint2Button.Name = "teleportwaypoint2Button"
 teleportwaypoint2Button.Parent = MainFrame
-teleportwaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint2Button.BackgroundColor3 = ColorButton
 teleportwaypoint2Button.BorderSizePixel = 0
 teleportwaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
 teleportwaypoint2Button.Font = Enum.Font.Code
 teleportwaypoint2Button.Text = "   📌 Teleport to WayPoint 02"
-teleportwaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint2Button.TextColor3 = ColorText
 teleportwaypoint2Button.TextSize = 14.000
 teleportwaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
 
 teleportwaypoint3Button.Name = "teleportwaypoint3Button"
 teleportwaypoint3Button.Parent = MainFrame
-teleportwaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+teleportwaypoint3Button.BackgroundColor3 = ColorButton
 teleportwaypoint3Button.BorderSizePixel = 0
 teleportwaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
 teleportwaypoint3Button.Font = Enum.Font.Code
 teleportwaypoint3Button.Text = "   📌 Teleport to WayPoint 03"
-teleportwaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportwaypoint3Button.TextColor3 = ColorText
 teleportwaypoint3Button.TextSize = 14.000
 teleportwaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
 
 removewaypoint1Button.Name = "removewaypoint1Button"
 removewaypoint1Button.Parent = MainFrame
-removewaypoint1Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint1Button.BackgroundColor3 = ColorButton
 removewaypoint1Button.BorderSizePixel = 0
 removewaypoint1Button.Size = UDim2.new(0, 493, 0, 17)
 removewaypoint1Button.Font = Enum.Font.Code
 removewaypoint1Button.Text = "   🗑 Remove WayPoint 01"
-removewaypoint1Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint1Button.TextColor3 = ColorText
 removewaypoint1Button.TextSize = 14.000
 removewaypoint1Button.TextXAlignment = Enum.TextXAlignment.Left
 
 removewaypoint2Button.Name = "removewaypoint2Button"
 removewaypoint2Button.Parent = MainFrame
-removewaypoint2Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint2Button.BackgroundColor3 = ColorButton
 removewaypoint2Button.BorderSizePixel = 0
 removewaypoint2Button.Size = UDim2.new(0, 493, 0, 17)
 removewaypoint2Button.Font = Enum.Font.Code
 removewaypoint2Button.Text = "   🗑 Remove WayPoint 02"
-removewaypoint2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint2Button.TextColor3 = ColorText
 removewaypoint2Button.TextSize = 14.000
 removewaypoint2Button.TextXAlignment = Enum.TextXAlignment.Left
 
 removewaypoint3Button.Name = "removewaypoint3Button"
 removewaypoint3Button.Parent = MainFrame
-removewaypoint3Button.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+removewaypoint3Button.BackgroundColor3 = ColorButton
 removewaypoint3Button.BorderSizePixel = 0
 removewaypoint3Button.Size = UDim2.new(0, 493, 0, 17)
 removewaypoint3Button.Font = Enum.Font.Code
 removewaypoint3Button.Text = "   🗑 Remove WayPoint 03"
-removewaypoint3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+removewaypoint3Button.TextColor3 = ColorText
 removewaypoint3Button.TextSize = 14.000
 removewaypoint3Button.TextXAlignment = Enum.TextXAlignment.Left
 
 showplayerallButton.Name = "showplayerallButton"
 showplayerallButton.Parent = MainFrame
-showplayerallButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+showplayerallButton.BackgroundColor3 = ColorButton
 showplayerallButton.BorderSizePixel = 0
 showplayerallButton.Size = UDim2.new(0, 493, 0, 17)
 showplayerallButton.Font = Enum.Font.Code
-showplayerallButton.Text = "   🔍 Show WayPoint on All Players 🟥"
-showplayerallButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+showplayerallButton.Text = "   🟥 🔍 Show WayPoint on All Players"
+showplayerallButton.TextColor3 = ColorText
 showplayerallButton.TextSize = 14.000
 showplayerallButton.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1188,171 +1252,171 @@ Text_3.BackgroundTransparency = 1.000
 Text_3.Size = UDim2.new(0, 200, 0, 50)
 Text_3.Font = Enum.Font.Code
 Text_3.Text = "━━ Part ━━"
-Text_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_3.TextColor3 = ColorText
 Text_3.TextSize = 14.000
 
 CreatePartButton.Name = "CreatePartButton"
 CreatePartButton.Parent = MainFrame
-CreatePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CreatePartButton.BackgroundColor3 = ColorButton
 CreatePartButton.BorderSizePixel = 0
 CreatePartButton.Size = UDim2.new(0, 493, 0, 17)
 CreatePartButton.Font = Enum.Font.Code
 CreatePartButton.Text = "   🧱 Create Part"
-CreatePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreatePartButton.TextColor3 = ColorText
 CreatePartButton.TextSize = 14.000
 CreatePartButton.TextXAlignment = Enum.TextXAlignment.Left
 
 PartnameInput.Name = "PartnameInput"
 PartnameInput.Parent = CreatePartButton
-PartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PartnameInput.BackgroundColor3 = ColorInput
 PartnameInput.BorderSizePixel = 0
 PartnameInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
 PartnameInput.Size = UDim2.new(0, 97, 0, 15)
 PartnameInput.Font = Enum.Font.Code
 PartnameInput.PlaceholderText = "Part Name"
 PartnameInput.Text = ""
-PartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PartnameInput.TextColor3 = ColorText
 PartnameInput.TextSize = 13.000
 
 SizePartButton.Name = "SizePartButton"
 SizePartButton.Parent = MainFrame
-SizePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+SizePartButton.BackgroundColor3 = ColorButton
 SizePartButton.BorderSizePixel = 0
 SizePartButton.Size = UDim2.new(0, 493, 0, 17)
 SizePartButton.Font = Enum.Font.Code
 SizePartButton.Text = "   🧱 Part Size"
-SizePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizePartButton.TextColor3 = ColorText
 SizePartButton.TextSize = 14.000
 SizePartButton.TextXAlignment = Enum.TextXAlignment.Left
 
 SizeZInput.Name = "SizeZInput"
 SizeZInput.Parent = SizePartButton
-SizeZInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeZInput.BackgroundColor3 = ColorInput
 SizeZInput.BorderSizePixel = 0
 SizeZInput.Position = UDim2.new(0.89046663, 0, 0.100000001, 0)
 SizeZInput.Size = UDim2.new(0, 51, 0, 15)
 SizeZInput.Font = Enum.Font.Code
 SizeZInput.PlaceholderText = "Z"
 SizeZInput.Text = ""
-SizeZInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeZInput.TextColor3 = ColorText
 SizeZInput.TextSize = 13.000
 
 SizeYInput.Name = "SizeYInput"
 SizeYInput.Parent = SizePartButton
-SizeYInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeYInput.BackgroundColor3 = ColorInput
 SizeYInput.BorderSizePixel = 0
 SizeYInput.Position = UDim2.new(0.766734362, 0, 0.100000001, 0)
 SizeYInput.Size = UDim2.new(0, 51, 0, 15)
 SizeYInput.Font = Enum.Font.Code
 SizeYInput.PlaceholderText = "Y"
 SizeYInput.Text = ""
-SizeYInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeYInput.TextColor3 = ColorText
 SizeYInput.TextSize = 13.000
 
 SizeXInput.Name = "SizeXInput"
 SizeXInput.Parent = SizePartButton
-SizeXInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizeXInput.BackgroundColor3 = ColorInput
 SizeXInput.BorderSizePixel = 0
 SizeXInput.Position = UDim2.new(0.638945341, 0, 0.100000001, 0)
 SizeXInput.Size = UDim2.new(0, 51, 0, 15)
 SizeXInput.Font = Enum.Font.Code
 SizeXInput.PlaceholderText = "X"
 SizeXInput.Text = ""
-SizeXInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeXInput.TextColor3 = ColorText
 SizeXInput.TextSize = 13.000
 
 SizePartnameInput.Name = "SizePartnameInput"
 SizePartnameInput.Parent = SizePartButton
-SizePartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+SizePartnameInput.BackgroundColor3 = ColorInput
 SizePartnameInput.BorderSizePixel = 0
 SizePartnameInput.Position = UDim2.new(0.415383369, 0, 0.100000001, 0)
 SizePartnameInput.Size = UDim2.new(0, 97, 0, 15)
 SizePartnameInput.Font = Enum.Font.Code
 SizePartnameInput.PlaceholderText = "Part Name"
 SizePartnameInput.Text = ""
-SizePartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizePartnameInput.TextColor3 = ColorText
 SizePartnameInput.TextSize = 13.000
 
 PositionPartButton.Name = "PositionPartButton"
 PositionPartButton.Parent = MainFrame
-PositionPartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+PositionPartButton.BackgroundColor3 = ColorButton
 PositionPartButton.BorderSizePixel = 0
 PositionPartButton.Size = UDim2.new(0, 493, 0, 17)
 PositionPartButton.Font = Enum.Font.Code
 PositionPartButton.Text = "   🧱 Part Position"
-PositionPartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionPartButton.TextColor3 = ColorText
 PositionPartButton.TextSize = 14.000
 PositionPartButton.TextXAlignment = Enum.TextXAlignment.Left
 
 PositionZInput.Name = "PositionZInput"
 PositionZInput.Parent = PositionPartButton
-PositionZInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionZInput.BackgroundColor3 = ColorInput
 PositionZInput.BorderSizePixel = 0
 PositionZInput.Position = UDim2.new(0.89046663, 0, 0.100000001, 0)
 PositionZInput.Size = UDim2.new(0, 51, 0, 15)
 PositionZInput.Font = Enum.Font.Code
 PositionZInput.PlaceholderText = "Z"
 PositionZInput.Text = ""
-PositionZInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionZInput.TextColor3 = ColorText
 PositionZInput.TextSize = 13.000
 
 PositionYInput.Name = "PositionYInput"
 PositionYInput.Parent = PositionPartButton
-PositionYInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionYInput.BackgroundColor3 = ColorInput
 PositionYInput.BorderSizePixel = 0
 PositionYInput.Position = UDim2.new(0.766734362, 0, 0.100000001, 0)
 PositionYInput.Size = UDim2.new(0, 51, 0, 15)
 PositionYInput.Font = Enum.Font.Code
 PositionYInput.PlaceholderText = "Y"
 PositionYInput.Text = ""
-PositionYInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionYInput.TextColor3 = ColorText
 PositionYInput.TextSize = 13.000
 
 PositionXInput.Name = "PositionXInput"
 PositionXInput.Parent = PositionPartButton
-PositionXInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionXInput.BackgroundColor3 = ColorInput
 PositionXInput.BorderSizePixel = 0
 PositionXInput.Position = UDim2.new(0.638945341, 0, 0.100000001, 0)
 PositionXInput.Size = UDim2.new(0, 51, 0, 15)
 PositionXInput.Font = Enum.Font.Code
 PositionXInput.PlaceholderText = "X"
 PositionXInput.Text = ""
-PositionXInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionXInput.TextColor3 = ColorText
 PositionXInput.TextSize = 13.000
 
 PositionPartnameInput.Name = "PositionPartnameInput"
 PositionPartnameInput.Parent = PositionPartButton
-PositionPartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+PositionPartnameInput.BackgroundColor3 = ColorInput
 PositionPartnameInput.BorderSizePixel = 0
 PositionPartnameInput.Position = UDim2.new(0.415383369, 0, 0.100000001, 0)
 PositionPartnameInput.Size = UDim2.new(0, 97, 0, 15)
 PositionPartnameInput.Font = Enum.Font.Code
 PositionPartnameInput.PlaceholderText = "Part Name"
 PositionPartnameInput.Text = ""
-PositionPartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+PositionPartnameInput.TextColor3 = ColorText
 PositionPartnameInput.TextSize = 13.000
 
 RemovePartButton.Name = "RemovePartButton"
 RemovePartButton.Parent = MainFrame
-RemovePartButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+RemovePartButton.BackgroundColor3 = ColorButton
 RemovePartButton.BorderSizePixel = 0
 RemovePartButton.Size = UDim2.new(0, 493, 0, 17)
 RemovePartButton.Font = Enum.Font.Code
 RemovePartButton.Text = "   🗑 Remove Part"
-RemovePartButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RemovePartButton.TextColor3 = ColorText
 RemovePartButton.TextSize = 14.000
 RemovePartButton.TextXAlignment = Enum.TextXAlignment.Left
 
 RemovePartnameInput.Name = "RemovePartnameInput"
 RemovePartnameInput.Parent = RemovePartButton
-RemovePartnameInput.BackgroundColor3 = Color3.fromRGB(79, 31, 83)
+RemovePartnameInput.BackgroundColor3 = ColorInput
 RemovePartnameInput.BorderSizePixel = 0
 RemovePartnameInput.Position = UDim2.new(0.79875052, 0, 0.100000001, 0)
 RemovePartnameInput.Size = UDim2.new(0, 97, 0, 15)
 RemovePartnameInput.Font = Enum.Font.Code
 RemovePartnameInput.PlaceholderText = "Part Name"
 RemovePartnameInput.Text = ""
-RemovePartnameInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+RemovePartnameInput.TextColor3 = ColorText
 RemovePartnameInput.TextSize = 13.000
 
 PlayersFrame.Name = "PlayersFrame"
@@ -1389,85 +1453,85 @@ UIGridLayout_3.CellSize = UDim2.new(0, 493, 0, 20)
 
 Text_4.Name = "Text"
 Text_4.Parent = CheckFrame
-Text_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_4.BackgroundColor3 = ColorButton
 Text_4.BackgroundTransparency = 1.000
 Text_4.Size = UDim2.new(0, 200, 0, 50)
 Text_4.Font = Enum.Font.Code
 Text_4.Text = "━━ Character ━━"
-Text_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_4.TextColor3 = ColorText
 Text_4.TextSize = 14.000
 
 CheckWalkSpeedButton.Name = "CheckWalkSpeedButton"
 CheckWalkSpeedButton.Parent = CheckFrame
-CheckWalkSpeedButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckWalkSpeedButton.BackgroundColor3 = ColorButton
 CheckWalkSpeedButton.BorderSizePixel = 0
 CheckWalkSpeedButton.Size = UDim2.new(0, 493, 0, 17)
 CheckWalkSpeedButton.Font = Enum.Font.Code
 CheckWalkSpeedButton.Text = "   🔍 Check WalkSpeed : N/A"
-CheckWalkSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckWalkSpeedButton.TextColor3 = ColorText
 CheckWalkSpeedButton.TextSize = 14.000
 CheckWalkSpeedButton.TextXAlignment = Enum.TextXAlignment.Left
 
 CheckJumPowerButton.Name = "CheckJumPowerButton"
 CheckJumPowerButton.Parent = CheckFrame
-CheckJumPowerButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckJumPowerButton.BackgroundColor3 = ColorButton
 CheckJumPowerButton.BorderSizePixel = 0
 CheckJumPowerButton.Size = UDim2.new(0, 493, 0, 17)
 CheckJumPowerButton.Font = Enum.Font.Code
 CheckJumPowerButton.Text = "   🔍 Check JumPower : N/A"
-CheckJumPowerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckJumPowerButton.TextColor3 = ColorText
 CheckJumPowerButton.TextSize = 14.000
 CheckJumPowerButton.TextXAlignment = Enum.TextXAlignment.Left
 
 CheckPositionButton.Name = "CheckPositionButton"
 CheckPositionButton.Parent = CheckFrame
-CheckPositionButton.BackgroundColor3 = Color3.fromRGB(142, 55, 152)
+CheckPositionButton.BackgroundColor3 = ColorButton
 CheckPositionButton.BorderSizePixel = 0
 CheckPositionButton.Size = UDim2.new(0, 493, 0, 17)
 CheckPositionButton.Font = Enum.Font.Code
 CheckPositionButton.Text = "   🔍 Check Position : N/A"
-CheckPositionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckPositionButton.TextColor3 = ColorText
 CheckPositionButton.TextSize = 14.000
 CheckPositionButton.TextXAlignment = Enum.TextXAlignment.Left
 
 Bar.Name = "Bar"
 Bar.Parent = ScreenGui
-Bar.BackgroundColor3 = Color3.fromRGB(33, 13, 35)
+Bar.BackgroundColor3 = ColorBar
 Bar.BorderSizePixel = 0
 Bar.Position = UDim2.new(0.248045206, 0, 0.233461261, 0)
 Bar.Size = UDim2.new(0, 619, 0, 17)
 
 OffButton.Name = "OffButton"
 OffButton.Parent = Bar
-OffButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OffButton.BackgroundColor3 = ColorButton
 OffButton.BackgroundTransparency = 1.000
 OffButton.Position = UDim2.new(0.883683443, 0, 0, 0)
 OffButton.Size = UDim2.new(0, 18, 0, 17)
 OffButton.Font = Enum.Font.Code
 OffButton.Text = "-"
-OffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OffButton.TextColor3 = ColorText
 OffButton.TextSize = 14.000
 
 SmallButton.Name = "SmallButton"
 SmallButton.Parent = Bar
-SmallButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SmallButton.BackgroundColor3 = ColorButton
 SmallButton.BackgroundTransparency = 1.000
 SmallButton.Position = UDim2.new(0.930533171, 0, 0, 0)
 SmallButton.Size = UDim2.new(0, 18, 0, 17)
 SmallButton.Font = Enum.Font.Code
 SmallButton.Text = "[]"
-SmallButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SmallButton.TextColor3 = ColorText
 SmallButton.TextSize = 14.000
 
 CloseButton.Name = "CloseButton"
 CloseButton.Parent = Bar
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.BackgroundColor3 = ColorButton
 CloseButton.BackgroundTransparency = 1.000
 CloseButton.Position = UDim2.new(0.970920861, 0, 0, 0)
 CloseButton.Size = UDim2.new(0, 18, 0, 17)
 CloseButton.Font = Enum.Font.Code
 CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextColor3 = ColorText
 CloseButton.TextSize = 14.000
 
 TextName.Name = "TextName"
@@ -1478,7 +1542,7 @@ TextName.Position = UDim2.new(0.0145395799, 0, 0, 0)
 TextName.Size = UDim2.new(0, 191, 0, 17)
 TextName.Font = Enum.Font.Code
 TextName.Text = "AVG Script Hub"
-TextName.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextName.TextColor3 = ColorText
 TextName.TextSize = 10.000
 TextName.TextXAlignment = Enum.TextXAlignment.Left
 ------------------------------------------------------------
@@ -1540,9 +1604,9 @@ end)
 ---------------- CreateButton
 ------------------------------------------------------------
 local TextAresanal = createtext("Text",MainFrame,"Arsenal")
-local showarsenalButton = createbutton("ShowPlayersArsenalButton",MainFrame,"🔍 Show All Players (Arsenal) 🟥")
-local headlockButton = createbutton("HeadLockButton",MainFrame,"🔫 Lock Head (Arsenal) 🟥")
-local ranteleportButton = createbutton("RandomTeleportButton",MainFrame,"🔮 Random Teleport to Players (Arsenal) 🟥")
+local showarsenalButton = createbutton("ShowPlayersArsenalButton",MainFrame,"🟥 🔍 Show All Players (Arsenal)")
+local headlockButton = createbutton("HeadLockButton",MainFrame,"🟥 🔫 Lock Head (Arsenal)")
+local ranteleportButton = createbutton("RandomTeleportButton",MainFrame,"🟥 🔮 Random Teleport to Players (Arsenal)")
 ------------------------------------------------------------
 ---------------- NewButtonClick
 ------------------------------------------------------------
@@ -1550,29 +1614,29 @@ showarsenalButton.MouseButton1Click:Connect(function()
 	if showplayerArsenal.Value == false then
 		showplayerArsenal.Value = true
 		showallplrarsenal(showplayerArsenal)
-		showarsenalButton.Text = "   🔍 Show All Players (Arsenal) 🟥"
+		showarsenalButton.Text = "   🟥 🔍 Show All Players (Arsenal)"
 	else
 		showplayerArsenal.Value = false
 		showallplrarsenal(showplayerArsenal)
-		showarsenalButton.Text = "   🔍 Show All Players (Arsenal) 🟩"
+		showarsenalButton.Text = "   🟩 🔍 Show All Players (Arsenal)"
 	end
 end)
 headlockButton.MouseButton1Click:Connect(function()
 	if headlock.Value == false then
 		headlock.Value = true
-		headlockButton.Text = "   🔫 Lock Head (Arsenal) 🟩"
+		headlockButton.Text = "   🟩 🔫 Lock Head (Arsenal)"
 	else
 		headlock.Value = false
-		headlockButton.Text = "   🔫 Lock Head (Arsenal) 🟥"
+		headlockButton.Text = "   🟥 🔫 Lock Head (Arsenal)"
 	end
 end)
 ranteleportButton.MouseButton1Click:Connect(function()
 	if ranteleport.Value == false then
 		ranteleport.Value = true
-		ranteleportButton.Text = "   🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ] 🟩"
+		ranteleportButton.Text = "   🟩 🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ]"
 	else
 		ranteleport.Value = false
-		ranteleportButton.Text = "   🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ] 🟥"
+		ranteleportButton.Text = "   🟥 🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ]"
 	end
 end)
 function GetPing()
@@ -1607,5 +1671,5 @@ while wait() do
 	elseif GetPing() < 10 then
 		ping = "🟪"
 	end
-	TextName.Text = "AVG Script Hub     "..math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5).." Fps  "..fps.." Ping "..GetPing().." ms "..ping
+	TextName.Text = "AVG Script Hub | v0.0.3 "..math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5).." Fps  "..fps.." Ping "..GetPing().." ms "..ping
 end
