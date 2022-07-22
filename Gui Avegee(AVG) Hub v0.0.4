@@ -22,7 +22,11 @@
 ║██████████████████████████████████████████████████████████████████████
 ╚════════════════════════════════════════════════════════════════════╝
 ]]--
--- Create By AVG Script Hub v0.0.3
+-- Create By AVG Script Hub
+------------------------------------------------------------
+local CoreGui = game.CoreGui
+local PlayersGui = game.Players.LocalPlayer.PlayerGui
+local ParentGui = CoreGui
 ------------------------------------------------------------
 local ColorButton = Color3.fromRGB(0, 0, 0)
 local ColorBackground = Color3.fromRGB(0, 0, 0)
@@ -90,7 +94,7 @@ DarkTeam()
 ------------------------------------------------------------
 ---------------- Starting
 ------------------------------------------------------------
-local STSCEEN = Instance.new("ScreenGui",game.CoreGui)
+local STSCEEN = Instance.new("ScreenGui",ParentGui)
 local STFRAME = Instance.new("Frame",STSCEEN)
 local STTEXT = Instance.new("TextLabel",STFRAME)
 STFRAME.BackgroundColor3 = ColorBackground
@@ -119,14 +123,18 @@ local times = 0
 for x = 1,5 do
 	times += 10
 	STTEXT.Text = "Loading. "..times.."%"
-	wait(0.5)
+	wait(0.1)
 	times += 10
 	STTEXT.Text = "Loading.. "..times.."%"
-	wait(0.5)
+	wait(0.1)
 	STTEXT.Text = "Loading... "..times.."%"
-	wait(0.5)
+	wait(0.1)
 end
 STSCEEN:Destroy()
+local randomcolor = {
+	Color3.new(0.215686, 1, 0)--,Color3.new(1, 0, 0),Color3.new(1, 1, 1),Color3.new(0.933333, 0, 1),
+	--Color3.new(0, 1, 1),Color3.new(0, 0.34902, 1),Color3.new(1, 1, 0),Color3.new(1, 0.584314, 0)
+}
 ------------------------------------------------------------
 ---------------- Setting
 ------------------------------------------------------------
@@ -232,6 +240,13 @@ function sit()
 		cha.Humanoid.Sit = false
 	end
 end
+local function getPlayerFromCharacter(character)
+	for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+		if player.Character == character then
+			return player
+		end
+	end
+end
 function createwaypoint(name,color)
 	if game.Workspace:FindFirstChild(name) == nil then
 		local part = Instance.new("Part",game.Workspace)
@@ -303,7 +318,7 @@ function showallplr(db)
 					local find = temp.HumanoidRootPart:FindFirstChild("BillboardGui")
 					if find == nil then
 						local tag = Instance.new("ObjectValue",db)
-						local BillboardGui = create(temp.HumanoidRootPart,Color3.new(1, 0, 0),temp.Name)
+						local BillboardGui = create(temp.HumanoidRootPart,randomcolor[math.random(1,#randomcolor)],temp.Name)
 						tag.Value = BillboardGui
 					end
 				end
@@ -316,8 +331,12 @@ function showallplrarsenal(db)
 		local list = db:GetChildren()
 		for i = 1, #list do
 			local object = list[i].Value
-			object:Destroy()
-			list[i]:Destroy()
+			if object ~= nil then
+				object:Destroy()
+				list[i]:Destroy()
+			else
+				list[i]:Destroy()
+			end
 		end
 	else
 		local child = game:GetService("Players"):GetChildren()
@@ -331,7 +350,7 @@ function showallplrarsenal(db)
 						local find = temp.Character.HumanoidRootPart:FindFirstChild("BillboardGui")
 						if find == nil then
 							local tag = Instance.new("ObjectValue",db)
-							local BillboardGui = create(temp.Character.HumanoidRootPart,Color3.new(1, 0, 0),temp.Name)
+							local BillboardGui = create(temp.Character.HumanoidRootPart,randomcolor[math.random(1,#randomcolor)],temp.Name)
 							tag.Value = BillboardGui
 						end
 					end
@@ -600,14 +619,18 @@ posZ.Name = "PosZ"
 local showplayer = Instance.new("BoolValue",Folder)
 local showplayerArsenal = Instance.new("BoolValue",Folder)
 local headlock = Instance.new("BoolValue",Folder)
+local aimbot = Instance.new("BoolValue",Folder)
 local ranteleport = Instance.new("BoolValue",Folder)
+local cancollidemap = Instance.new("BoolValue",Folder)
 ------------------------------------------------------------
 ---------------- ValueSetting
 ------------------------------------------------------------
 showplayer.Name = "ShowPlayer"
 showplayerArsenal.Name = "ShowPlayerArsenal"
 headlock.Name = "HeadLock"
+aimbot.Name = "Aimbot"
 ranteleport.Name = "RandomTeleport(Arsenal)"
+cancollidemap.Name = "CancollideMap(Arsenal)"
 ------------------------------------------------------------
 ---------------- Button
 ------------------------------------------------------------
@@ -848,7 +871,7 @@ end)
 ------------------------------------------------------------
 ---------------- Porperties
 ------------------------------------------------------------
-ScreenGui.Parent = game.CoreGui
+ScreenGui.Parent = ParentGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 UIGridLayout_4.Parent = Showcmd
@@ -1600,13 +1623,101 @@ Mouse.Button1Down:Connect(function()
 		end
 	end
 end)
+Mouse.Button1Down:Connect(function()
+	db = false
+	if db == false and aimbot.Value == true then
+		local Character = game:GetService("Players").LocalPlayer.Character
+		local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+		local part = Instance.new("Part",workspace)
+		part.CastShadow = false
+		part.Transparency = 1.00
+		part.Size = Vector3.new(10,10,10)
+		part.CFrame = HumanoidRootPart.CFrame
+		part.CanCollide = false
+		game.Debris:AddItem(part,2)
+		local bv = Instance.new("BodyVelocity",part)
+		bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+		bv.Velocity = Mouse.Hit.LookVector * 4000
+		part.Touched:Connect(function(hit)
+			if hit.Parent ~= Character and hit.Parent:FindFirstChild("Humanoid") and db == false then
+				local Echa = hit.Parent
+				local Eplr = getPlayerFromCharacter(Echa)
+				if Eplr ~= nil and Eplr.Team ~= Player.Team then
+					db = true
+					CurrentCamera.CFrame = lookAt(HumanoidRootPart.Position, hit.Parent:FindFirstChild("Head").Position+Vector3.new(0,-1,0))
+					part:Destroy()
+					wait()
+				end
+			end
+		end)
+	end
+end)
+function cancollidemaparsenal(db)
+	if db.Value == false then
+		local Transparency = 0
+		local CanCollide = true
+		local child = game.Workspace.Map.Geometry:GetChildren()
+		local temp = nil
+		for i = 1,#child do
+			temp = child[i]
+			if temp.ClassName == "Part" then
+				temp.Transparency = Transparency
+				temp.CanCollide = CanCollide
+			end
+			if temp.ClassName == "Model" then
+				local inM = temp:GetChildren()
+				for o = 1, #inM do
+					local part = inM[o]
+					if part.ClassName == "Part" then
+						part.Transparency = Transparency
+						part.CanCollide = CanCollide
+					end
+				end
+			end
+		end
+		local part = game.Workspace:FindFirstChild("NewPartInTheWorldforAVGHubCreate")
+		if part then
+			part:Destroy()
+		end
+	else
+		local Transparency = 0.7
+		local CanCollide = false
+		local child = game.Workspace.Map.Geometry:GetChildren()
+		local temp = nil
+		for i = 1,#child do
+			temp = child[i]
+			if temp.ClassName == "Part" then
+				temp.Transparency = Transparency
+				temp.CanCollide = CanCollide
+			end
+			if temp.ClassName == "Model" then
+				local inM = temp:GetChildren()
+				for o = 1, #inM do
+					local part = inM[o]
+					if part.ClassName == "Part" then
+						part.Transparency = Transparency
+						part.CanCollide = CanCollide
+					end
+				end
+			end
+		end
+		local cha = game.Players.LocalPlayer.Character
+		local part = Instance.new("Part",game.Workspace)
+		part.Name = "NewPartInTheWorldforAVGHubCreate"
+		part.Anchored = true
+		part.Size = Vector3.new(5000,1,5000)
+		part.CFrame = cha.HumanoidRootPart.CFrame * CFrame.new(0,-4,0)
+	end
+end
 ------------------------------------------------------------
 ---------------- CreateButton
 ------------------------------------------------------------
 local TextAresanal = createtext("Text",MainFrame,"Arsenal")
 local showarsenalButton = createbutton("ShowPlayersArsenalButton",MainFrame,"🟥 🔍 Show All Players (Arsenal)")
 local headlockButton = createbutton("HeadLockButton",MainFrame,"🟥 🔫 Lock Head (Arsenal)")
+local aimbotButton = createbutton("AnimbotButton",MainFrame,"🟥 💥 Aimbot (Arsenal)")
 local ranteleportButton = createbutton("RandomTeleportButton",MainFrame,"🟥 🔮 Random Teleport to Players (Arsenal)")
+local cancollidemapButton = createbutton("CanCollideMapButton",MainFrame,"🟥 🧊 CanCollide Map (Arsenal)")
 ------------------------------------------------------------
 ---------------- NewButtonClick
 ------------------------------------------------------------
@@ -1630,6 +1741,15 @@ headlockButton.MouseButton1Click:Connect(function()
 		headlockButton.Text = "   🟥 🔫 Lock Head (Arsenal)"
 	end
 end)
+aimbotButton.MouseButton1Click:Connect(function()
+	if aimbot.Value == false then
+		aimbot.Value = true
+		aimbotButton.Text = "   🟩 💥 Aimbot (Arsenal)"
+	else
+		aimbot.Value = false
+		aimbotButton.Text = "   🟥 💥 Aimbot (Arsenal)"
+	end
+end)
 ranteleportButton.MouseButton1Click:Connect(function()
 	if ranteleport.Value == false then
 		ranteleport.Value = true
@@ -1639,6 +1759,17 @@ ranteleportButton.MouseButton1Click:Connect(function()
 		ranteleportButton.Text = "   🟥 🔮 Random Teleport to Players (Arsenal) [ Enter "..teleport.Name.." ]"
 	end
 end)
+cancollidemapButton.MouseButton1Click:Connect(function()
+	if cancollidemap.Value == false then
+		cancollidemap.Value = true
+		cancollidemaparsenal(cancollidemap)
+		cancollidemapButton.Text = "   🟩 🧊 CanCollide Map (Arsenal)"
+	else
+		cancollidemap.Value = false
+		cancollidemaparsenal(cancollidemap)
+		cancollidemapButton.Text = "   🟥 🧊 CanCollide Map (Arsenal)"
+	end
+end)
 function GetPing()
 	local Ping = 300-((1/wait())*10)
 	if Ping < 1 then
@@ -1646,6 +1777,7 @@ function GetPing()
 	end
 	return math.floor(Ping)
 end
+
 while wait() do
 	local fps = ""
 	local ping = ""
@@ -1671,5 +1803,5 @@ while wait() do
 	elseif GetPing() < 10 then
 		ping = "🟪"
 	end
-	TextName.Text = "AVG Script Hub | v0.0.3 "..math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5).." Fps  "..fps.." Ping "..GetPing().." ms "..ping
+	TextName.Text = "AVG Script Hub    v0.0.4    "..math.floor(game.Workspace:GetRealPhysicsFPS() + 0.5).." Fps  "..fps.." Ping "..GetPing().." ms "..ping
 end
